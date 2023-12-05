@@ -23,4 +23,5 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+// Admin routes
 Route::prefix('admin')->as('admin.')->group(base_path('routes/admin.php'));
