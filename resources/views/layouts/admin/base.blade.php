@@ -33,6 +33,26 @@
       
       <div class="row">
         <div class="col-md-12">
+          @if ($errors->any())
+          <div class="card">
+            <div class="card-header">Errors:</div>
+            <div class="card-body">
+            
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+            </div>
+          </div>
+          @endif
+
+          @if(session('success'))
+              <h1>{{session('success')}}</h1>
+          @endif
+          
           @yield('content')
         </div>
       </div>

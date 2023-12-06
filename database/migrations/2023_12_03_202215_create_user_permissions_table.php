@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('user_permissions', function (Blueprint $table) {
             $table->id();
-            $table->positiveInteger('user_id');
-            $table->positiveInteger('permission_id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('permission_id');
             $table->timestamps();
         });
     }

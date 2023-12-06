@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('user_groups', function (Blueprint $table) {
             $table->id();
-            $table->positiveInteger('user_id');
-            $table->positiveInteger('group_id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('group_id');
             $table->timestamps();
         });
     }

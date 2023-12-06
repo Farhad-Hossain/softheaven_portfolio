@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('auth_groups', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 50);
-            $table->timestamps();
+        Schema::table('auth_groups', function (Blueprint $table) {
+            $table->string('slug', 50);
         });
     }
 
@@ -23,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('auth_groups');
+        Schema::table('auth_groups', function (Blueprint $table) {
+            //
+        });
     }
 };
