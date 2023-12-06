@@ -1,4 +1,4 @@
-@extends('layouts.admin.base')
+@extends('layouts.admin.base', ['title'=>'Users Group'])
 
 @section('content')
 <div class="card">
@@ -8,7 +8,7 @@
     </div>
 
     <div class="card-body">
-        <table id="auth-group-table" class="display" style="width:100%" class="table">
+        <table id="auth-group-table" style="width:100%" class="table">
             <thead>
               <tr>
                 <th>Name</th>

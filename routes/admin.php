@@ -14,5 +14,8 @@ Route::group(['prefix'=>'auth', 'as'=>'auth.'], function () {
   Route::post('create-group', [PermissionController::class, 'createAuthGroup'])
     ->name('create_group');
 
+  Route::get('users', [UserController::class, 'getUsers'])
+    ->name('users');
+
   
 });

@@ -16,7 +16,7 @@
       <li class="treeview">
         <a class="app-menu__item" href="#" data-toggle="treeview">
             <i class="app-menu__icon bi bi-laptop"></i>
-            <span class="app-menu__label">Permissions</span>
+            <span class="app-menu__label">User & Permissions</span>
             <i class="treeview-indicator bi bi-chevron-right"></i>
         </a>
 
@@ -24,6 +24,12 @@
           <li>
             <a class="treeview-item" href="{{route('admin.auth.auth_groups')}}">
                  <span class="submenu"> User Groups</span>
+            </a>
+          </li>
+
+          <li>
+            <a class="treeview-item" href="{{route('admin.auth.users')}}">
+                 <span class="submenu"> Users</span>
             </a>
           </li>
         </ul>
