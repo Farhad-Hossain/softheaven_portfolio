@@ -38,8 +38,8 @@
       <!-- END ... Permisions & Group   -->
 
       <li>
-        <a class="app-menu__item" href="docs.html">
-            <span class="app-menu__label">Docs</span>
+        <a class="app-menu__item" href="{{route('admin.contacts')}}">
+            <span class="app-menu__label">Contacts</span>
         </a>
       </li>
 

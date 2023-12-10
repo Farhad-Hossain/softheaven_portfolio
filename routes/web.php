@@ -22,6 +22,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::post('contact', [FrontendController::class, 'saveContact'])->name('save_contact');
+
 
 // Admin routes
 Route::prefix('admin')->as('admin.')->group(base_path('routes/admin.php'));
+

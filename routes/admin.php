@@ -6,6 +6,8 @@ use Auth;
 
 Route::get('/', [AdminController::class, 'index'])->name('index');
 
+Route::get('/contacts', [Admin\ContactController::class, 'contacts'])->name('contacts');
+
 Route::group(['prefix'=>'auth', 'as'=>'auth.'], function () {
 
   Route::get('/groups', [PermissionController::class, 'authGroups'])
