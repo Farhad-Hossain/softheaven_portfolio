@@ -15,9 +15,7 @@ use Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontendController::class, 'welcome']);
 
 Auth::routes();
 

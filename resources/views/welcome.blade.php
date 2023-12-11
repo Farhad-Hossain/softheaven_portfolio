@@ -484,90 +484,38 @@
         <div class="container">
             <div class="team-items">
                 <div class="row">
+                    @foreach($teamMembers as $member)
                     <!-- Single Item -->
                     <div class="single-item col-lg-4 col-md-6">
                         <div class="item">
                             <div class="thumb">
-                                <img src="{{asset('f')}}/img/800x900.png" alt="Thumb">
+                                <img src="{{asset('uploaded_images/'.$member->photo_url)}}"
+                                    style="width: 100%; height: 350px;" alt="Thumb">
                                 <div class="social">
-                                    <input type="checkbox" id="toggle" class="share-toggle" hidden>
-                                    <label for="toggle" class="share-button">
+                                    <input type="checkbox" id="toggle{{$loop->index}}" class="share-toggle" hidden>
+                                    <label for="toggle{{$loop->index}}" class="share-button">
                                         <i class="fas fa-plus"></i>
                                     </label>
-                                    <a href="#" class="share-icon facebook">
+                                    <a href="{{$member->facebook ?? ''}}" class="share-icon facebook">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
-                                    <a href="#" class="share-icon twitter">
+                                    <a href="{{$member->x ?? ''}}" class="share-icon twitter">
                                         <i class="fab fa-twitter"></i>
                                     </a>
-                                    <a href="#" class="share-icon instagram">
-                                        <i class="fab fa-instagram"></i>
+                                    <a href="{{$member->linkedin ?? ''}}" class="share-icon linkedin">
+                                        <i class="fab fa-linkedin"></i>
                                     </a>
                                 </div>
                             </div>
                             <div class="info">
-                                <h4>Ahem Natasha</h4>
-                                <span>Operations officer</span>
+                                <h4>{{$member->name}}</h4>
+                                <span>{{$member->designation}}</span>
                             </div>
                         </div>
                     </div>
                     <!-- End Single Item -->
-                    <!-- Single Item -->
-                    <div class="single-item col-lg-4 col-md-6">
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="{{asset('f')}}/img/800x900.png" alt="Thumb">
-                                <div class="social">
-                                    <input type="checkbox" id="toggle2" class="share-toggle" hidden>
-                                    <label for="toggle2" class="share-button">
-                                        <i class="fas fa-plus"></i>
-                                    </label>
-                                    <a href="#" class="share-icon facebook">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="#" class="share-icon twitter">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="#" class="share-icon instagram">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h4>Devid mark</h4>
-                                <span>Graphic designer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
-                    <!-- Single Item -->
-                    <div class="single-item col-lg-4 col-md-6">
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="{{asset('f')}}/img/800x900.png" alt="Thumb">
-                                <div class="social">
-                                    <input type="checkbox" id="toggle3" class="share-toggle" hidden>
-                                    <label for="toggle3" class="share-button">
-                                        <i class="fas fa-plus"></i>
-                                    </label>
-                                    <a href="#" class="share-icon facebook">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="#" class="share-icon twitter">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="#" class="share-icon instagram">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h4>Brave Hammam</h4>
-                                <span>Web developer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
+                    @endforeach
+                    
                 </div>
             </div>
         </div>

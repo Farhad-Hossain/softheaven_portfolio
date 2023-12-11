@@ -7,6 +7,10 @@ use Auth;
 Route::get('/', [AdminController::class, 'index'])->name('index');
 
 Route::get('/contacts', [Admin\ContactController::class, 'contacts'])->name('contacts');
+Route::get('/team-members', [Admin\TeamController::class, 'teamMembers'])->name('team_members');
+
+Route::post('/add-team-member', [Admin\TeamController::class, 'addTeamMember'])->name('add_team_member');
+
 
 Route::group(['prefix'=>'auth', 'as'=>'auth.'], function () {
 

@@ -4,10 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\TeamMember;
 use DB;
 
 class FrontendController extends Controller
 {
+    public function welcome(Request $request)
+    {
+        $teamMembers = TeamMember::all();
+        return view('welcome', compact(
+            'teamMembers'
+        ));
+    }
     public function saveContact(Request $request)
     {
         // START:: Validation

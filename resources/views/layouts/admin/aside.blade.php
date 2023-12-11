@@ -43,5 +43,11 @@
         </a>
       </li>
 
+      <li>
+        <a class="app-menu__item" href="{{route('admin.team_members')}}">
+            <span class="app-menu__label">Team Members</span>
+        </a>
+      </li>
+
     </ul>
   </aside>
