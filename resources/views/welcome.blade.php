@@ -973,7 +973,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <p>&copy; Copyright 2021. All Rights Reserved by <a href="#">validthemes</a></p>
+                        <p>&copy; Copyright {{date('Y')}}. All Rights Reserved by <a href="https://portfolio.softheaven.org">SoftHeaven</a></p>
                     </div>
                     <div class="col-lg-6 text-right link">
                         <ul>
