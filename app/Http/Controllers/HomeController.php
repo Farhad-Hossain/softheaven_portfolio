@@ -17,11 +17,18 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware( function($request, $next) {
-            if ( Auth::user()->is_super_admin ) {
+            if ( Auth::user() && Auth::user()->is_super_admin ) {
                 $this->redirectTo = 'admin.index';
             }
             return $next($request);
         });
+    }
+
+    public function executeCommand(Request $request)
+    {
+        $command = $request->command;
+        $result = \Artisan::call($command);
+        dd($result);
     }
 
     /**

