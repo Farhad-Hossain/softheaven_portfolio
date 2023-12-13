@@ -27,5 +27,5 @@ Route::post('contact', [FrontendController::class, 'saveContact'])->name('save_c
 
 
 // Admin routes
-Route::prefix('admin')->as('admin.')->group(base_path('routes/admin.php'));
+Route::prefix('admin')->as('admin.')->middleware('auth')->group(base_path('routes/admin.php'));
 

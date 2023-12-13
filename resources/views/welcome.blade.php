@@ -56,7 +56,7 @@
                 <!-- Start Atribute Navigation -->
                 <div class="attr-nav">
                     <ul>
-                        <li class="button"><a href="#">Free Trial</a></li>
+                        <li class="button"><a href="#">{{ $gs ? $gs->hotline_no : '' }}</a></li>
                     </ul>
                 </div>        
                 <!-- End Atribute Navigation -->
@@ -67,7 +67,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index.html">
-                        <img src="{{asset('f')}}/img/logo.png" class="logo" alt="Logo">
+                        <img src="{{asset('uploaded_images')}}/{{$gs ? $gs->logo : ''}}" class="logo" alt="Logo">
                     </a>
                 </div>
                 <!-- End Header Navigation -->
@@ -120,12 +120,12 @@
             <div class="content-box">
                 <div class="row align-center">
                     <div class="col-lg-8 offset-lg-2 info">
-                        <h2 class="wow fadeInRight" data-wow-defaul="300ms">We're building software<strong>to manage business</strong></h2>
+                        <h2 class="wow fadeInRight" data-wow-defaul="300ms">{{ $gs ? $gs->title_message : '' }}<strong>to manage business</strong></h2>
                         <p class="wow fadeInLeft" data-wow-delay="500ms">
-                            Lasted hunted enough an up seeing in lively letter. Had judgment out opinions property the supplied.
+                            {{ $gs ? $gs->sub_title_message : '' }}
                         </p>
                         <div class="button wow fadeInDown" data-wow-delay="700ms">
-                            <a href="https://www.youtube.com/watch?v=owhuBrGIOsE" class="popup-youtube video-btn"><i class="fas fa-play"></i>Watch Promo</a>
+                            <a href="{{ $gs ? $gs->promo_video_link : '' }}" class="popup-youtube video-btn"><i class="fas fa-play"></i>Watch Promo</a>
                         </div>
                     </div>
                     <div class="col-lg-12">
@@ -150,7 +150,7 @@
                         <li>
                             <div class="fun-fact">
                                 <div class="counter">
-                                    <div class="timer" data-to="10000" data-speed="5000">10000</div>
+                                    <div class="timer" data-to="{{ $gs ? $gs->trusted_clients_count : 0 }}" data-speed="5000">{{ $gs ? $gs->trusted_clients_count : 0 }}</div>
                                     <div class="operator">+</div>
                                 </div>
                                 <span class="medium">Trusted Users</span>
@@ -159,7 +159,7 @@
                         <li>
                             <div class="fun-fact">
                                 <div class="counter">
-                                    <div class="timer" data-to="100" data-speed="5000">100</div>
+                                    <div class="timer" data-to="{{ $gs ? $gs->rating : 0 }}" data-speed="5000">{{ $gs ? $gs->rating : '' }}</div>
                                     <div class="operator">%</div>
                                 </div>
                                 <span class="medium">Positive Rating</span>
@@ -168,7 +168,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-6 right-info">
-                    <h2>Trusted client by over <br>10000+ of the world’s</h2>
+                    <h2>Trusted client by over <br>{{ $gs ? $gs->trusted_clients_count : 0 }}+ of the world’s</h2>
                 </div>
                 <div class="col-lg-12">
                     <div class="partner-carousel owl-carousel owl-theme">
@@ -801,7 +801,7 @@
                         <li>
                             <i class="fas fa-phone"></i>
                             <p>
-                                +44-20-7328-4499 <br> +99-34-8878-9989
+                                {{ $gs ? $gs->contact_no_1 : '' }} <br> {{ $gs ? $gs->contact_no_2 : '' }}
                             </p>
                         </li>
                     </ul>
@@ -949,7 +949,7 @@
                                         </div>
                                         <div class="content">
                                             <strong>Email:</strong>
-                                            <a href="mailto:info@validtheme.com">info@validtheme.com</a>
+                                            <a href="mailto:{{ $gs ? $gs->contact_email : '' }}">{{ $gs ? $gs->contact_email : '' }}</a>
                                         </div>
                                     </li>
                                     <li>
@@ -958,7 +958,7 @@
                                         </div>
                                         <div class="content">
                                             <strong>Phone:</strong>
-                                            <a href="tel:2151234567">+123 34598768</a>
+                                            <a href="tel:{{ $gs ? $gs->hotline_no : '' }}">{{ $gs ? $gs->hotline_no : '' }}</a>
                                         </div>
                                     </li>
                                 </ul>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\TeamMember;
+use App\Models\GeneralSetting;
 use DB;
 
 class FrontendController extends Controller
@@ -12,8 +13,10 @@ class FrontendController extends Controller
     public function welcome(Request $request)
     {
         $teamMembers = TeamMember::all();
+        $gs = GeneralSetting::first();
         return view('welcome', compact(
-            'teamMembers'
+            'teamMembers',
+            'gs'
         ));
     }
     public function saveContact(Request $request)

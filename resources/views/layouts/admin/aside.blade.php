@@ -49,5 +49,11 @@
         </a>
       </li>
 
+      <li>
+        <a class="app-menu__item" href="{{route('admin.general_setting')}}">
+            <span class="app-menu__label">General Setting</span>
+        </a>
+      </li>
+
     </ul>
   </aside>

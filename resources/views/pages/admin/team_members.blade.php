@@ -1,4 +1,4 @@
-@extends('layouts.admin.base')
+@extends('layouts.admin.base', ['title'=>'Team Members'])
 
 @section('content')
 <div class="card">

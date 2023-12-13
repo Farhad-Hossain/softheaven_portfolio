@@ -10,6 +10,7 @@ Route::get('/contacts', [Admin\ContactController::class, 'contacts'])->name('con
 Route::get('/team-members', [Admin\TeamController::class, 'teamMembers'])->name('team_members');
 
 Route::post('/add-team-member', [Admin\TeamController::class, 'addTeamMember'])->name('add_team_member');
+Route::match(['GET', 'POST'], 'general-settings', [Admin\GeneralSettingController::class, 'generalSetting'])->name('general_setting');
 
 
 Route::group(['prefix'=>'auth', 'as'=>'auth.'], function () {
