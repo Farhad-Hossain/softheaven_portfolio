@@ -36,6 +36,11 @@
                 <label for="">Ratings</label>
                 <input type="number" name="rating" value="{{$gs->rating ?? ''}}">
             </div>
+            
+            <div class="col-sm-12 col-md-3 mb-3">
+                <label for="">Address Bar Icon</label>
+                <input type="file" name="address_bar_icon" value="{{$gs->address_bar_icon ?? ''}}" accept="image/*">
+            </div>
 
             <div class="col-sm-12 col-md-3 mb-3">
                 <label for="">Logo</label>

@@ -3,7 +3,9 @@
     <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Image">
       <div>
         <p class="app-sidebar__user-name">{{Auth::user()->name}}</p>
+        {{--
         <p class="app-sidebar__user-designation">Software Developer</p>
+        --}}
       </div>
     </div>
 
@@ -58,6 +60,12 @@
       <li>
         <a class="app-menu__item" href="{{route('admin.clients_list_company')}}">
             <span class="app-menu__label">Manage Clients Company</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="app-menu__item" href="">
+            <span class="app-menu__label">Manage Testimonial</span>
         </a>
       </li>
 

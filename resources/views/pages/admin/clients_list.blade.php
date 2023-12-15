@@ -14,6 +14,7 @@
                   <th>Logo</th>
                   <th>Company Name</th>
                   <th>Company Link Address</th>  
+                  <th>Action</th>
                 </tr>
             </thead>
 
@@ -25,6 +26,10 @@
                   </td>
                   <td>{{$c->name}}</td>
                   <td>{{$c->link}}</td>
+                  <td>
+                    <button class="btn-sm btn-warning edit-btn" data-id="{{$c->id}}">Edit</button>
+                    <button class="btn-sm btn-danger delete-btn" data-id="{{$c->id}}">Delete</button>
+                  </td>
                 </tr>
               @endforeach
             </tbody>

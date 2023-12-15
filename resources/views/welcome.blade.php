@@ -12,7 +12,7 @@
     <title>Softheaven - We provide Software for business</title>
 
     <!-- ========== Favicon Icon ========== -->
-    <link rel="shortcut icon" href="{{asset('f')}}/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('storage')}}/{{$gs ? $gs->address_bar_icon : ''}}" type="image/x-icon">
 
     <!-- ========== Start Stylesheet ========== -->
     <link href="{{asset('f')}}/css/bootstrap.min.css" rel="stylesheet" />
@@ -67,7 +67,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index.html">
-                        <img src="{{asset('uploaded_images')}}/{{$gs ? $gs->logo : ''}}" class="logo" alt="Logo">
+                        <img src="{{asset('storage')}}/{{$gs ? $gs->logo : ''}}" class="logo" alt="Logo">
                     </a>
                 </div>
                 <!-- End Header Navigation -->
@@ -793,13 +793,15 @@
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
                             <p>
-                                22 Baker Street, <br> London, United Kingdom, <br> W1U 3BW
+                                {{$gs ? $gs->address : ''}}
                             </p>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
                             <p>
-                                {{ $gs ? $gs->contact_no_1 : '' }} <br> {{ $gs ? $gs->contact_no_2 : '' }}
+                                <a href="tel:{{ $gs ? $gs->contact_no_1 : '' }} ">{{ $gs ? $gs->contact_no_1 : '' }} </a> 
+                                <br> 
+                                <a href="tel:{{ $gs ? $gs->contact_no_1 : '' }} ">{{ $gs ? $gs->contact_no_2 : '' }}</a> 
                             </p>
                         </li>
                     </ul>
@@ -867,7 +869,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6 item">
                         <div class="f-item about">
-                            <img src="{{asset('f')}}/img/logo-light.png" alt="Logo">
+                            <img src="{{asset('storage')}}/{{$gs ? $gs->logo : ''}}" alt="Logo">
                             <p>
                                 Excellence decisively nay man yet impression for contrasted remarkably. There spoke happy for you are out. Fertile how old address did showing.
                             </p>
@@ -885,7 +887,7 @@
                                     <a href="#"><i class="fas fa-angle-right"></i> Home</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> About us</a>
+                                    <a href="#contact"><i class="fas fa-angle-right"></i> About us</a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fas fa-angle-right"></i> Compnay History</a>
@@ -897,7 +899,7 @@
                                     <a href="#"><i class="fas fa-angle-right"></i> Blog Page</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Login</a>
+                                    <a href="{{route('login')}}"><i class="fas fa-angle-right"></i> Login</a>
                                 </li>
                             </ul>
                         </div>
@@ -938,7 +940,7 @@
                                         </div>
                                         <div class="content">
                                             <strong>Address:</strong>
-                                            5919 Trussville Crossings Pkwy, Birmingham
+                                            {{ $gs ? $gs->address : '' }}
                                         </div>
                                     </li>
                                     <li>

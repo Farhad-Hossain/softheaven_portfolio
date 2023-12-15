@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('general_settings', function (Blueprint $table) {
             $table->id();
             $table->string('hotline_no',14);
+            $table->string('address_bar_icon', 250);
             $table->string('logo', 250);
             $table->string('title_message', 80);
             $table->string('sub_title_message', 150);

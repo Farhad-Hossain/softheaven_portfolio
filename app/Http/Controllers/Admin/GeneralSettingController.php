@@ -37,9 +37,14 @@ class GeneralSettingController extends Controller
 
                 $logoName = $gs->logo ?? '#';
                 if ( $request->file('logo') ) {
-                    $logoName = time().'.'.request()->logo->getClientOriginalExtension();
-                    request()->logo->move(public_path('uploaded_images'), $logoName);
+                    $logoName = $this->makeFileName('', $request->file('logo'));
+                    $this->storeFile($logoName, $request->file('logo'));
                 }
+                if ( $request->address_bar_icon ) {
+                    $iconName = $this->makeFileName('', $request->file('address_bar_icon'));
+                    $this->storeFile($iconName, $request->file('address_bar_icon'));
+                }
+                $gs->address_bar_icon = $iconName;
                 $gs->logo = $logoName;
                 $gs->save();
 
