@@ -9,7 +9,7 @@
     <meta name="description" content="Softar - Software Landing Page">
 
     <!-- ========== Page Title ========== -->
-    <title>Softar - Software Landing Page</title>
+    <title>Softheaven - We provide Software for business</title>
 
     <!-- ========== Favicon Icon ========== -->
     <link rel="shortcut icon" href="{{asset('f')}}/img/favicon.png" type="image/x-icon">

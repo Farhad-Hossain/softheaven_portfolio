@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('b')}}/css/main.css">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <title>Login - Vali Admin</title>
+    <title>Login - SoftHeaven</title>
   </head>
   <body>
     <section class="material-half-bg">
@@ -28,7 +28,8 @@
       </div>
       <div class="login-box">
         
-        <form class="login-form" action="" method="POST">
+        <form class="login-form" action="{{route('login')}}" method="POST">
+          @csrf
           <h3 class="login-head"><i class="bi bi-person me-2"></i>SIGN IN</h3>
           
           <div class="mb-3">

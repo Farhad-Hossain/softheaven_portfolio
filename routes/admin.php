@@ -11,6 +11,7 @@ Route::get('/team-members', [Admin\TeamController::class, 'teamMembers'])->name(
 
 Route::post('/add-team-member', [Admin\TeamController::class, 'addTeamMember'])->name('add_team_member');
 Route::match(['GET', 'POST'], 'general-settings', [Admin\GeneralSettingController::class, 'generalSetting'])->name('general_setting');
+Route::match(['GET', 'POST'], 'manage-clients-company', [Admin\ClientsListController::class, 'getClientsList'])->name('clients_list_company');
 
 
 Route::group(['prefix'=>'auth', 'as'=>'auth.'], function () {

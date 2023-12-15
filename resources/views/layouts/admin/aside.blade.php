@@ -55,5 +55,11 @@
         </a>
       </li>
 
+      <li>
+        <a class="app-menu__item" href="{{route('admin.clients_list_company')}}">
+            <span class="app-menu__label">Manage Clients Company</span>
+        </a>
+      </li>
+
     </ul>
   </aside>
