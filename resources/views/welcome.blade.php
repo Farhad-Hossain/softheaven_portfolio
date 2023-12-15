@@ -172,11 +172,9 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="partner-carousel owl-carousel owl-theme">
-                        <img src="{{asset('f')}}/img/150x80.png" alt="Partner">
-                        <img src="{{asset('f')}}/img/150x80.png" alt="Partner">
-                        <img src="{{asset('f')}}/img/150x80.png" alt="Partner">
-                        <img src="{{asset('f')}}/img/150x80.png" alt="Partner">
-                        <img src="{{asset('f')}}/img/150x80.png" alt="Partner">
+                        @foreach($clients as $client)
+                        <img src="{{asset('storage').'/'.$client->logo_link}}" alt="{{$client->name}}" style="height: 80px;">
+                        @endforeach
                     </div>
                 </div>
             </div>

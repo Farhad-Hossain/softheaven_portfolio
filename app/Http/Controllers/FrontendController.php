@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\TeamMember;
 use App\Models\GeneralSetting;
+use App\Models\ClientCompany;
 use DB;
 
 class FrontendController extends Controller
@@ -14,9 +15,11 @@ class FrontendController extends Controller
     {
         $teamMembers = TeamMember::all();
         $gs = GeneralSetting::first();
+        $clients = ClientCompany::all();
         return view('welcome', compact(
             'teamMembers',
-            'gs'
+            'gs',
+            'clients'
         ));
     }
     public function saveContact(Request $request)
