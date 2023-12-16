@@ -21,6 +21,7 @@ class GeneralSettingController extends Controller
                 $gs = GeneralSetting::first();
                 $gs = $gs ?? new GeneralSetting();
 
+
                 $gs->hotline_no = $request->hotline_no;
                 $gs->title_message = $request->title_message;
                 $gs->sub_title_message = $request->sub_title_message;
@@ -35,7 +36,9 @@ class GeneralSettingController extends Controller
                 $gs->created_by = Auth::user()->id;
                 $gs->updated_by = Auth::user()->id;
 
-                $logoName = $gs->logo ?? '#';
+                $logoName = $gs ? $gs->logo : '#';
+                $iconName = $gs ? $gs->address_bar_icon : '#';
+
                 if ( $request->file('logo') ) {
                     $logoName = $this->makeFileName('', $request->file('logo'));
                     $this->storeFile($logoName, $request->file('logo'));
@@ -50,6 +53,7 @@ class GeneralSettingController extends Controller
 
                 return redirect()->back()->with('success', 'Information updated successfully.');
             } catch( \Exception $e ) {
+                dd($e);
                 return redirect()->back()->with('error', 'Something went wrong.');
             }
         } else {

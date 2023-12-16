@@ -54,7 +54,7 @@
 
             <div class="col-sm-12 col-md-6 mb-3">
                 <label for="">Company Link</label>
-                <input type="text" name="company_link" maxlength="250" value="{{$gs->company_link ?? ''}}" required>
+                <input type="url" name="company_link" maxlength="250" value="{{$gs->company_link ?? ''}}" required>
             </div>
 
             <div class="col-sm-12 col-md-6 mb-3">

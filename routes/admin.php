@@ -13,6 +13,7 @@ Route::post('/add-team-member', [Admin\TeamController::class, 'addTeamMember'])-
 Route::match(['GET', 'POST'], 'general-settings', [Admin\GeneralSettingController::class, 'generalSetting'])->name('general_setting');
 Route::match(['GET'], 'manage-clients-company', [Admin\ClientsListController::class, 'getClientsList'])->name('clients_list_company');
 Route::post('add-client-company', [Admin\ClientsListController::class, 'addClientCompany'])->name('add_client_company');
+Route::get('testimonials', [Admin\TestimonialController::class, 'getAllTestimonials'])->name('testimonials');
 
 
 Route::group(['prefix'=>'auth', 'as'=>'auth.'], function () {

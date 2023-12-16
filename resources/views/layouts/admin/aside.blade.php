@@ -64,7 +64,7 @@
       </li>
 
       <li>
-        <a class="app-menu__item" href="">
+        <a class="app-menu__item" href="{{route('admin.testimonials')}}">
             <span class="app-menu__label">Manage Testimonial</span>
         </a>
       </li>

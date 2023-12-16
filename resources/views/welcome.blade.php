@@ -128,6 +128,7 @@
                             <a href="{{ $gs ? $gs->promo_video_link : '' }}" class="popup-youtube video-btn"><i class="fas fa-play"></i>Watch Promo</a>
                         </div>
                     </div>
+                    
                     <div class="col-lg-12">
                         <div class="thumb-inner">
                             <img class="wow fadeInRight" data-wow-delay="900ms" src="{{asset('f')}}/img/dashboard/7.png" alt="Thumb">
