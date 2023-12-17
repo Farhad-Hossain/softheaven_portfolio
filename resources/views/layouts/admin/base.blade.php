@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     @yield('styles')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   </head>
 
   <body class="app sidebar-mini">

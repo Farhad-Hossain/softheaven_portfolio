@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <!-- ========== Meta Tags ========== -->
@@ -31,11 +31,10 @@
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="{{asset('f')}}/js/html5/html5shiv.min.js"></script>
-      <script src="{{asset('f')}}/js/html5/respond.min.js"></script>
-    <![endif]-->
-
+    
+    <script src="{{asset('f')}}/js/html5/html5shiv.min.js"></script>
+    <script src="{{asset('f')}}/js/html5/respond.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
@@ -66,7 +65,7 @@
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="/">
                         <img src="{{asset('storage')}}/{{$gs ? $gs->logo : ''}}" class="logo" alt="Logo">
                     </a>
                 </div>
@@ -484,37 +483,8 @@
             <div class="team-items">
                 <div class="row">
                     @foreach($teamMembers as $member)
-                    <!-- Single Item -->
-                    <div class="single-item col-lg-4 col-md-6">
-                        <div class="item">
-                            <div class="thumb">
-                                <img src="{{asset('uploaded_images/'.$member->photo_url)}}"
-                                    style="width: 100%; height: 350px;" alt="Thumb">
-                                <div class="social">
-                                    <input type="checkbox" id="toggle{{$loop->index}}" class="share-toggle" hidden>
-                                    <label for="toggle{{$loop->index}}" class="share-button">
-                                        <i class="fas fa-plus"></i>
-                                    </label>
-                                    <a href="{{$member->facebook ?? ''}}" class="share-icon facebook">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="{{$member->x ?? ''}}" class="share-icon twitter">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="{{$member->linkedin ?? ''}}" class="share-icon linkedin">
-                                        <i class="fab fa-linkedin"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h4>{{$member->name}}</h4>
-                                <span>{{$member->designation}}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Item -->
+                    <x-team_member :member="$member" :index="$loop->index"/>
                     @endforeach
-                    
                 </div>
             </div>
         </div>

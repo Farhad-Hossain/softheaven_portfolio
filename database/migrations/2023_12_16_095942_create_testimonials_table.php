@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('designation', 100);
             $table->string('organization', 100);
-            $table->string('avtar', 100)->nullable();
+            $table->string('avatar', 100)->nullable();
             $table->mediumText('message', 500);
-            $table->boolean('status')->default(0);
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

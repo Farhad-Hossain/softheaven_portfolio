@@ -14,6 +14,8 @@ Route::match(['GET', 'POST'], 'general-settings', [Admin\GeneralSettingControlle
 Route::match(['GET'], 'manage-clients-company', [Admin\ClientsListController::class, 'getClientsList'])->name('clients_list_company');
 Route::post('add-client-company', [Admin\ClientsListController::class, 'addClientCompany'])->name('add_client_company');
 Route::get('testimonials', [Admin\TestimonialController::class, 'getAllTestimonials'])->name('testimonials');
+Route::post('testimonial/save', [Admin\TestimonialController::class, 'saveTestimonial'])->name('testimonial.save');
+Route::post('testimonial/delete', [Admin\TestimonialController::class, 'deleteTestimonial'])->name('testimonial.delete');
 
 
 Route::group(['prefix'=>'auth', 'as'=>'auth.'], function () {
