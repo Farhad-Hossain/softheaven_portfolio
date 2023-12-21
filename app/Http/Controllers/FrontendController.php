@@ -7,6 +7,7 @@ use App\Models\Contact;
 use App\Models\TeamMember;
 use App\Models\GeneralSetting;
 use App\Models\ClientCompany;
+use App\Models\Blog;
 use DB;
 
 class FrontendController extends Controller
@@ -16,10 +17,12 @@ class FrontendController extends Controller
         $teamMembers = TeamMember::all();
         $gs = GeneralSetting::first();
         $clients = ClientCompany::all();
+        $blogs = Blog::latest()->take(3)->get();
         return view('welcome', compact(
             'teamMembers',
             'gs',
-            'clients'
+            'clients',
+            'blogs',
         ));
     }
     public function saveContact(Request $request)

@@ -77,7 +77,7 @@
 </div>
 @endsection
 
-@section('scripts')
+@push('js')
 <script>
     $(document).ready( ()=>{
         $(document).on('click', `#btn-add-client`, ()=>{
@@ -85,4 +85,4 @@
         })
     });
 </script>
-@endsection
+@endpush

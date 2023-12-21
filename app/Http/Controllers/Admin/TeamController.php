@@ -45,6 +45,27 @@ class TeamController extends Controller
             DB::rollback();
             return back();
         }
-        dd( $request->all() );
+        
+    }
+
+    public function deleteTeamMember(Request $request)
+    {
+        $result = [
+            'success' => false,
+            'message' => '',
+        ];
+        DB::beginTransaction();
+        try {
+            $member = TeamMember::find($request->id);
+            $member->delete();
+            DB::commit();
+            $result['success'] = true;
+            $result['message'] = 'Team member deleted successfully';
+            return response()->json($result);
+        } catch (\Exception $e) {
+            DB::rollback();
+            $result['message'] = 'Something went wrong';
+            return back();
+        }
     }
 }

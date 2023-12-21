@@ -70,7 +70,7 @@
 
 @endsection
 
-@section('scripts')
+@push('js')
 <script type="text/javascript">
     $(`#auth-group-table`).dataTable();
     
@@ -98,4 +98,4 @@
     // END:: Create group submit Button Action
 
 </script>
-@endsection
+@endpush

@@ -101,7 +101,7 @@
 
 @endsection
 
-@section('scripts')
+@push('js')
 <script>
     $(document).ready(function(){
         $(document).on('click', '#add-btn', function () {
@@ -115,4 +115,4 @@
         });
     });
 </script>
-@endsection
+@endpush

@@ -72,6 +72,52 @@
     <script src="{{asset('b')}}/js/bootstrap.min.js"></script>
     <script src="{{asset('b')}}/js/main.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    @yield('scripts')
+    <script>
+      $(document).ready(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        function getJson(url, method='GET', data={}) {
+            return JSON.parse($.ajax({
+                type: method,
+                url: url,
+                data: data,
+                dataType: 'json',
+                global: false,
+                async: false,
+                success: function (data) {
+                    return data;
+                }
+            }).responseText);
+        }
+        var obj = {};
+        var ids = $("[id]");
+        ids.each(function (ind, el) {
+          idValue = $(el).attr('id');
+          if ( idValue !== '' ) {
+            console.log( idValue )
+          }
+        });
+      })
+
+      function ckEditor(id)
+      {
+        ClassicEditor
+            .create( document.querySelector( "#"+id ) )
+            .catch( error => {
+                console.error( error );
+            } );
+      }
+    </script>
+
+    @stack('js')
+
+    <script>
+
+        
+    </script>
+    
   </body>
 </html>

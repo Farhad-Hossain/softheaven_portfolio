@@ -76,5 +76,5 @@
 </div>
 @endsection
 
-@section('scripts')
-@endsection
+@push('js')
+@endpush

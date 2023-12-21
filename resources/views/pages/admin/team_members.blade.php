@@ -34,7 +34,7 @@
                     
                     <td>
                         <button class="btn btn-sm btn-primary">Edit</button>
-                        <button class="btn btn-sm btn-danger">Delete</button>
+                        <button class="btn btn-sm btn-danger btn-delete" data-id="{{$teamMember->id}}">Delete</button>
                     </td>
                 </tr>
                 @endforeach
@@ -89,16 +89,20 @@
     </div>
     </form>
 </div>
-
-
 @endsection
 
-@section('scripts')
-<script>
-    $(document).ready( ()=>{
-        $(document).on('click', `#member-add-btn`, ()=>{
-            $(`#team-member-add-modal`).modal('show');
-        })
+@push('js')
+    <script>
+    $(document).on('click', `#member-add-btn`, ()=>{
+        $(`#team-member-add-modal`).modal('show');
+    })
+    $(document).on('click', '.btn-delete', function() {
+        let id = $(this).data('id');
+        let deleteResponse = getJson(`{{route('admin.delete_team_member')}}`, 'POST', {id: id})
+        if ( deleteResponse.success ) {
+            alert(deleteResponse.message);
+            window.location = window.location
+        }
     });
-</script>
-@endsection
+    <script>
+@endpush

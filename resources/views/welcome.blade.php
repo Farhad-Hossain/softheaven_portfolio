@@ -657,71 +657,13 @@
         </div>
         <div class="container">
             <div class="row">
-
+                @foreach($blogs as $blog)
                 <!-- Single item -->
                 <div class="single-item col-lg-4 col-md-6">
                     <div class="item">
                         <div class="thumb">
-                            <a href="#"><img src="{{asset('f')}}/img/800x600.png" alt="Thumb"></a>
-                            <div class="date"><strong>18</strong> <span>Apr</span></div>
-                        </div>
-                        <div class="info">
-                            <div class="meta">
-                                <ul>
-                                    <li>
-                                        <a href="#"><i class="fas fa-user"></i> User</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fas fa-comments"></i> 26 Comments</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <h4>
-                                <a href="#">Overcame breeding or my concerns removing desirous.</a>
-                            </h4>
-                            <p>
-                                Possession ye no mr unaffected remarkably at. Wrote house in never fruit up. Pasture imagine my garrets.  
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single item -->
-
-                <!-- Single item -->
-                <div class="single-item col-lg-4 col-md-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="#"><img src="{{asset('f')}}/img/800x600.png" alt="Thumb"></a>
-                            <div class="date"><strong>25</strong> <span>Aug</span></div>
-                        </div>
-                        <div class="info">
-                            <div class="meta">
-                                <ul>
-                                    <li>
-                                        <a href="#"><i class="fas fa-user"></i> Admin</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><i class="fas fa-comments"></i> 35 Comments</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <h4>
-                                <a href="#">Considered imprudence of he friendship boisterous.</a>
-                            </h4>
-                            <p>
-                                Possession ye no mr unaffected remarkably at. Wrote house in never fruit up. Pasture imagine my garrets.  
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single item -->
-
-                <!-- Single item -->
-                <div class="single-item col-lg-4 col-md-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="#"><img src="{{asset('f')}}/img/800x600.png" alt="Thumb"></a>
-                            <div class="date"><strong>05</strong> <span>Jul</span></div>
+                            <a href="#"><img src="{{asset('storage')}}/{{$blog->thumbnail}}" alt="Thumb" style="height: 230px; width: 100%;"></a>
+                            <div class="date"><strong>{{\Carbon\Carbon::parse($blog->publication_date)->format('d')}}</strong> <span>{{\Carbon\Carbon::parse($blog->publication_date)->format('M')}}</span></div>
                         </div>
                         <div class="info">
                             <div class="meta">
@@ -735,15 +677,16 @@
                                 </ul>
                             </div>
                             <h4>
-                                <a href="#">Overcame breeding or my concerns removing desirous.</a>
+                                <a href="#">{{$blog->title}}</a>
                             </h4>
                             <p>
-                                Possession ye no mr unaffected remarkably at. Wrote house in never fruit up. Pasture imagine my garrets.  
+                                {!! $blog->content !!}
                             </p>
                         </div>
                     </div>
                 </div>
                 <!-- End Single item -->
+                @endforeach
 
             </div>
         </div>
@@ -997,6 +940,7 @@
                 });
             })
         });
+
     </script>
 
 </body>
