@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\GeneralSetting;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 use Blade;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,7 +29,6 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Blade::directive('modalForm', function ($args) {
-            dd( $args );
             $args = explode(',', preg_replace("/[\(\)]/", '', $args), 2);
             dd($args);
             return `<div id="{$args['id']}" class="modal fade" role="dialog">
@@ -49,5 +50,8 @@ class AppServiceProvider extends ServiceProvider
                     </div>
                     </div>`;
         });
+
+        $gs = GeneralSetting::first();
+        View::share(['gs' => $gs]);
     }
 }

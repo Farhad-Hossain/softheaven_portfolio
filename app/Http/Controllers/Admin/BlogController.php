@@ -44,6 +44,12 @@ class BlogController extends Controller
     }
     public function delete (Request $request)
     {
-        dd('delete');
+        try {
+            $blog = Blog::find($request->blog_id);
+            $blog->delete();
+            return redirect()->back()->with('success','Blog Deleted Successfully');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
     }
 }

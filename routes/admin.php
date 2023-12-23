@@ -15,9 +15,14 @@ Route::post('/delete-team-member', [Admin\TeamController::class, 'deleteTeamMemb
 Route::match(['GET', 'POST'], 'general-settings', [Admin\GeneralSettingController::class, 'generalSetting'])->name('general_setting');
 Route::match(['GET'], 'manage-clients-company', [Admin\ClientsListController::class, 'getClientsList'])->name('clients_list_company');
 Route::post('add-client-company', [Admin\ClientsListController::class, 'addClientCompany'])->name('add_client_company');
+
+
 Route::get('testimonials', [Admin\TestimonialController::class, 'getAllTestimonials'])->name('testimonials');
-Route::post('testimonial/save', [Admin\TestimonialController::class, 'saveTestimonial'])->name('testimonial.save');
-Route::post('testimonial/delete', [Admin\TestimonialController::class, 'deleteTestimonial'])->name('testimonial.delete');
+Route::group(['prefix'=>'testimonial', 'as'=>'testimonial.'], function(){
+  Route::post('testimonial/save', [Admin\TestimonialController::class, 'saveTestimonial'])->name('save');
+  Route::post('testimonial/delete', [Admin\TestimonialController::class, 'deleteTestimonial'])->name('delete');
+});
+
 
 
 // START:: Blog

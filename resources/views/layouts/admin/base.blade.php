@@ -11,6 +11,7 @@
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
     @yield('styles')
     <meta name="csrf-token" content="{{ csrf_token() }}">
   </head>
@@ -62,7 +63,9 @@
               </div>
           @endif
           
+          <div id="content">
           @yield('content')
+          </div>
         </div>
       </div>
     </main>
@@ -79,19 +82,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        function getJson(url, method='GET', data={}) {
-            return JSON.parse($.ajax({
-                type: method,
-                url: url,
-                data: data,
-                dataType: 'json',
-                global: false,
-                async: false,
-                success: function (data) {
-                    return data;
-                }
-            }).responseText);
-        }
+        
         var obj = {};
         var ids = $("[id]");
         ids.each(function (ind, el) {
@@ -110,14 +101,21 @@
                 console.error( error );
             } );
       }
-    </script>
 
+      function getJson(url, method='GET', data={}) {
+          return JSON.parse($.ajax({
+              type: method,
+              url: url,
+              data: data,
+              dataType: 'json',
+              global: false,
+              async: false,
+              success: function (data) {
+                  return data;
+              }
+          }).responseText);
+      }
+    </script>
     @stack('js')
-
-    <script>
-
-        
-    </script>
-    
   </body>
 </html>

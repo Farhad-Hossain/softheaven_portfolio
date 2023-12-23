@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\TeamMember;
@@ -18,11 +19,13 @@ class FrontendController extends Controller
         $gs = GeneralSetting::first();
         $clients = ClientCompany::all();
         $blogs = Blog::latest()->take(3)->get();
+        $testimonials = Testimonial::where('status', 1)->get();
         return view('welcome', compact(
             'teamMembers',
             'gs',
             'clients',
             'blogs',
+            'testimonials'
         ));
     }
     public function saveContact(Request $request)

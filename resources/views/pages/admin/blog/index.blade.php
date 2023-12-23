@@ -36,4 +36,28 @@
         </table>
     </div>
 </div>
+
+
+@component('components.modal_form', [
+    'title' => 'Delete Blog',
+    'action' => route('admin.blog.delete'),
+    'id' => 'delete-modal',
+])
+    @slot('body')
+        <input type="hidden" name="blog_id" id="input-blog-id">
+        <h4>Are you sure want to delete ?</h4>
+    @endslot
+@endcomponent
+
 @endsection
+
+@push('js')
+<script>
+    $(document).ready(function (){
+        $(document).on('click', '.delete-btn', function () {
+            $(`#input-blog-id`).val( $(this).data('id') );
+            $(`#delete-modal`).modal('show');
+        })
+    });
+</script>
+@endpush
