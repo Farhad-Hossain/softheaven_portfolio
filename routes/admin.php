@@ -34,6 +34,12 @@ Route::group(['prefix'=>'blog', 'as'=>'blog.'], function () {
 });
 // END:: Blog
 
+// STAR:: Services
+Route::group(['prefix'=> 'service','as'=> 'service.'], function () {
+  // Route::get('/', [Admin\::class,
+});
+// END:: Services
+
 
 Route::group(['prefix'=>'auth', 'as'=>'auth.'], function () {
 

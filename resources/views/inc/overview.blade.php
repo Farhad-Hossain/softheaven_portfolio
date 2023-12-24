@@ -1,6 +1,6 @@
 <!-- Start Overview 
     ============================================= -->
-    <div id="overview" class="overview-area relative default-padding-top bg-gray carousel-shadow">
+    <div id="overview" class="overview-area relative default-padding-top">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
@@ -14,8 +14,35 @@
                 </div>
             </div>
         </div>
-        <div class="container-full">
+        <div class="container">
             <div class="row">
+                <div class="col-md-4 single-item">
+                    <div class="" style="border: 1px solid lightgrey; padding: 20px; text-align: center; border-radius: 5px; height: 280px;">
+                        <p style="text-decoration: underline; text-underline-offset: 5px;"><b>- Software Development -</b></p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum culpa perferendis voluptatibus doloribus ipsa deserunt voluptates officia sed accusantium quia atque, esse harum placeat. Tempora porro nesciunt dolorem doloribus consequuntur?
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 single-item">
+                    <div class="" style="border: 1px solid lightgrey; padding: 20px; text-align: center; border-radius: 5px; height: 280px;">
+                        <p style="text-decoration: underline; text-underline-offset: 5px;"><b>- Software Development -</b></p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum culpa perferendis voluptatibus doloribus ipsa deserunt voluptates officia sed accusantium quia atque, esse harum placeat. Tempora porro nesciunt dolorem doloribus consequuntur?
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 single-item">
+                    <div class="" style="border: 1px solid lightgrey; padding: 20px; text-align: center; border-radius: 5px; height: 280px;">
+                        <p style="text-decoration: underline; text-underline-offset: 5px;"><b>- Software Development -</b></p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum culpa perferendis voluptatibus doloribus ipsa deserunt voluptates officia sed accusantium quia atque, esse harum placeat. Tempora porro nesciunt dolorem doloribus consequuntur?
+                        </p>
+                    </div>
+                </div>
+                
+                
+                {{--
                 <div class="col-md-12">
                     <div class="overview-carousel owl-carousel owl-theme">
                         <!-- Single item -->
@@ -44,6 +71,7 @@
                         <!-- End Single item -->
                     </div>
                 </div>
+                --}}
             </div>
         </div>
     </div>

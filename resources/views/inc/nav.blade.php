@@ -26,27 +26,27 @@
     <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="nav navbar-nav navbar-center" data-in="#" data-out="#">
             <li>
-                <a class="smooth-menu" href="/">Home</a>
+                <a class="smooth-menu" href="{{route('welcome')}}">Home</a>
             </li>
             <li>
-                <a class="smooth-menu" href="#overview">Overview</a>
+                <a class="smooth-menu" href="{{route('welcome')}}#overview">Overview</a>
             </li>
             <li>
-                <a class="smooth-menu" href="#features">Features</a>
+                <a class="smooth-menu" href="{{route('welcome')}}#features">Features</a>
             </li>
             <li>
-                <a class="smooth-menu" href="#team">Team</a>
+                <a class="smooth-menu" href="{{route('welcome')}}#team">Team</a>
             </li>
             {{--
             <li>
-                <a class="smooth-menu" href="#pricing">Pricing</a>
+                <a class="smooth-menu" href="{{route('welcome')}}#pricing">Pricing</a>
             </li>
             --}}
             <li>
-                <a class="smooth-menu" href="#blog">Blog</a>
+                <a class="smooth-menu" href="{{route('welcome')}}#blog">Blog</a>
             </li>
             <li>
-                <a class="smooth-menu" href="#contact">Contact</a>
+                <a class="smooth-menu" href="{{route('welcome')}}#contact">Contact</a>
             </li>
         </ul>
     </div><!-- /.navbar-collapse -->

@@ -5525,3 +5525,6 @@ footer.bg-dark .footer-bottom a:hover {
   background: url(assets/img/preloader.gif) center no-repeat #fff;
   text-align: center;
 }
+.blog-link:hover {
+  color:rgb(243, 74, 170);
+}

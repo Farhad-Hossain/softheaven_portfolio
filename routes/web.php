@@ -18,7 +18,7 @@ use Auth;
 // Execute Artisan command
 Route::get('/exe-1995-05-egaro', [HomeController::class, 'executeCommand']);
 
-Route::get('/', [FrontendController::class, 'welcome']);
+Route::get('/', [FrontendController::class, 'welcome'])->name('welcome');
 
 Route::get('blogs/{slug?}', [BlogController::class, 'blogView'])->name('blog_details');
 

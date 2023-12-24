@@ -11,11 +11,12 @@ class BlogController extends Controller
     {
         $blog = null;
         $blogs = null;
+        $allBlogs = Blog::all();
         if ( $request->slug ) {
             $blog = Blog::whereSlug($request->slug)->first();
         } else {
             $blogs = Blog::orderBy('created_at','desc')->get();
         }
-        return view('pages.blogs.details', compact('blogs', 'blog'));
+        return view('pages.blogs.details', compact('blogs', 'blog', 'allBlogs'));
     }
 }

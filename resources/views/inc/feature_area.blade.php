@@ -2,9 +2,7 @@
     ============================================= -->
     <div class="features-area default-padding-top carousel-shadow">
         <!-- Shape -->
-        <div class="fixed-shape-bottom">
-            <img src="{{asset('f')}}/img/shape/1.png" alt="Shape">
-        </div>
+        
         <!-- End Shape -->
         <div class="container">
             <div class="features-box">
