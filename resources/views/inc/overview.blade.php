@@ -7,9 +7,7 @@
                     <div class="site-heading text-center">
                         <h2>Quick Service Overview</h2>
                         <div class="devider"></div>
-                        <p>
-                            Outlived no dwelling denoting in peculiar as he believed. Behaviour excellent middleton be as it curiosity departure ourselves very extreme future. 
-                        </p>
+                        <p>Effortless Efficiency at Your Fingertips: Discover Our Swift and Seamless Solutions for a Streamlined Experience Tailored to Your Unique Needs!</p>
                     </div>
                 </div>
             </div>
