@@ -6,7 +6,9 @@ use Auth;
 
 Route::get('/', [AdminController::class, 'index'])->name('index');
 
+Route::get('/newsletter', [Admin\NewsletterController::class, 'getNewsletters'])->name('newsletters');
 Route::get('/contacts', [Admin\ContactController::class, 'contacts'])->name('contacts');
+
 Route::get('/team-members', [Admin\TeamController::class, 'teamMembers'])->name('team_members');
 
 Route::post('/add-team-member', [Admin\TeamController::class, 'addTeamMember'])->name('add_team_member');
@@ -21,6 +23,12 @@ Route::get('testimonials', [Admin\TestimonialController::class, 'getAllTestimoni
 Route::group(['prefix'=>'testimonial', 'as'=>'testimonial.'], function(){
   Route::post('testimonial/save', [Admin\TestimonialController::class, 'saveTestimonial'])->name('save');
   Route::post('testimonial/delete', [Admin\TestimonialController::class, 'deleteTestimonial'])->name('delete');
+});
+
+Route::group(['prefix'=> 'services','as'=> 'service.'], function(){
+  Route::get('/', [Admin\ServiceController::class, 'getServiceList'])->name('list');
+  Route::match(['GET', 'POST'], '/save', [Admin\ServiceController::class, 'saveService'])->name('save');
+  Route::post('/service/delete', [Admin\ServiceController::class, 'deleteService'])->name('delete');
 });
 
 

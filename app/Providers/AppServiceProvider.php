@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\GeneralSetting;
+use App\Models\Service;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Blade;
@@ -52,6 +53,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $gs = GeneralSetting::first();
-        View::share(['gs' => $gs]);
+        $services = Service::where('active_status', 1)->get();
+        View::share(['gs' => $gs, 'services'=>$services]);
     }
 }

@@ -85,6 +85,17 @@
                     $('#contact-form')[0].reset();
                 });
             })
+
+            $(document).on('submit', `#newsletter-form`, (event) => {
+                event.preventDefault();
+                const url = $(`#newsletter-form`).attr('action');
+                const data = $(`#newsletter-form`).serialize();
+                $.post(url, data ).done( (response) => {
+                    $(`#newsletter-success-alert`).text(response.message);
+                    $(`#newsletter-success-alert`).removeClass('d-none');
+                    $('#newsletter-form')[0].reset();
+                });
+            })
         });
     </script>
 </body>

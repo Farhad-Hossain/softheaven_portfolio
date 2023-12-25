@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Newsletter;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use App\Models\Contact;
@@ -50,5 +51,20 @@ class FrontendController extends Controller
             DB::rollback();
             return back();
         }
+    }
+
+    public function createNewsletter(Request $request)
+    {
+        $n = Newsletter::where('email', $request->email)->first();
+        if ( $n == null ) {
+            $n = new Newsletter();
+        }
+        $n->email = $request->email;
+        $n->ip_address = $request->ip();
+        $n->save();
+        return response()->json([
+            'status' => 'success',
+            'message'=> 'Thank you for connecting with us.'
+        ]);
     }
 }

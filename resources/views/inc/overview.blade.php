@@ -16,31 +16,16 @@
         </div>
         <div class="container">
             <div class="row">
+                @foreach($services as $s)
                 <div class="col-md-4 single-item">
                     <div class="" style="border: 1px solid lightgrey; padding: 20px; text-align: center; border-radius: 5px; height: 280px;">
-                        <p style="text-decoration: underline; text-underline-offset: 5px;"><b>- Software Development -</b></p>
+                        <p style="text-decoration: underline; text-underline-offset: 5px;"><b>- {{ $s->title }} -</b></p>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum culpa perferendis voluptatibus doloribus ipsa deserunt voluptates officia sed accusantium quia atque, esse harum placeat. Tempora porro nesciunt dolorem doloribus consequuntur?
+                            {{ $s->description }}
                         </p>
                     </div>
                 </div>
-                <div class="col-md-4 single-item">
-                    <div class="" style="border: 1px solid lightgrey; padding: 20px; text-align: center; border-radius: 5px; height: 280px;">
-                        <p style="text-decoration: underline; text-underline-offset: 5px;"><b>- Software Development -</b></p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum culpa perferendis voluptatibus doloribus ipsa deserunt voluptates officia sed accusantium quia atque, esse harum placeat. Tempora porro nesciunt dolorem doloribus consequuntur?
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4 single-item">
-                    <div class="" style="border: 1px solid lightgrey; padding: 20px; text-align: center; border-radius: 5px; height: 280px;">
-                        <p style="text-decoration: underline; text-underline-offset: 5px;"><b>- Software Development -</b></p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum culpa perferendis voluptatibus doloribus ipsa deserunt voluptates officia sed accusantium quia atque, esse harum placeat. Tempora porro nesciunt dolorem doloribus consequuntur?
-                        </p>
-                    </div>
-                </div>
-                
+                @endforeach
                 
                 {{--
                 <div class="col-md-12">

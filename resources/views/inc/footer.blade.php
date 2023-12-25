@@ -10,9 +10,11 @@
                             <p>
                                 Excellence decisively nay man yet impression for contrasted remarkably. There spoke happy for you are out. Fertile how old address did showing.
                             </p>
-                            <form action="#">
+                            <span class="alert alert-success d-none" id="newsletter-success-alert"></span>
+                            <form action="{{route('newsletter.create')}}" id="newsletter-form">
+                                @csrf
                                 <input type="email" placeholder="Your Email" class="form-control" name="email">
-                                <button type="submit"> <i class="arrow_right"></i></button>  
+                                <button type="submit" id='newsletter-submit-btn'> <i class="arrow_right"></i></button>  
                             </form>
                         </div>
                     </div>
@@ -27,13 +29,13 @@
                                     <a href="#contact"><i class="fas fa-angle-right"></i> About us</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Compnay History</a>
+                                    <a href="#"><i class="fas fa-angle-right"></i> Company History</a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fas fa-angle-right"></i> Features</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Blog Page</a>
+                                    <a href="{{route('blog_details')}}"><i class="fas fa-angle-right"></i> Blog Page</a>
                                 </li>
                                 <li>
                                     <a href="{{route('login')}}"><i class="fas fa-angle-right"></i> Login</a>
@@ -110,7 +112,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <p>&copy; Copyright {{date('Y')}}. All Rights Reserved by <a href="https://portfolio.softheaven.org">SoftHeaven</a></p>
+                        <p>&copy; Copyright {{date('Y')}}. All Rights Reserved by <a href="{{ $gs->company_link }}">SoftHeaven</a></p>
                     </div>
                     <div class="col-lg-6 text-right link">
                         <ul>

@@ -37,10 +37,21 @@
         </ul>
       </li>
       <!-- END ... Permisions & Group   -->
-
+      
+      <li>
+        <a class="app-menu__item" href="{{route('admin.newsletters')}}">
+            <span class="app-menu__label">News letters</span>
+        </a>
+      </li>
       <li>
         <a class="app-menu__item" href="{{route('admin.contacts')}}">
             <span class="app-menu__label">Contacts</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="app-menu__item" href="{{route('admin.service.list')}}">
+            <span class="app-menu__label">Services</span>
         </a>
       </li>
 

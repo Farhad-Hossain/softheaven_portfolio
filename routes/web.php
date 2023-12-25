@@ -19,6 +19,7 @@ use Auth;
 Route::get('/exe-1995-05-egaro', [HomeController::class, 'executeCommand']);
 
 Route::get('/', [FrontendController::class, 'welcome'])->name('welcome');
+Route::post('/newsletter-create', [FrontendController::class, 'createNewsletter'])->name('newsletter.create');
 
 Route::get('blogs/{slug?}', [BlogController::class, 'blogView'])->name('blog_details');
 
