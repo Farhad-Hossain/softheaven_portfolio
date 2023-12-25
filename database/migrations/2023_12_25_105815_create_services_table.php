@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->mediumText('description');
-            $table->boolean('active_sattus')->default(1);
+            $table->boolean('active_status')->default(1);
             $table->unsignedInteger('created_by');
             $table->timestamps();
         });
