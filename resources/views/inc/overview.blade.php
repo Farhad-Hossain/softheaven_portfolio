@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row">
                 @foreach($services as $s)
-                <div class="col-md-4 single-item">
+                <div class="col-md-4 single-item mb-4">
                     <div class="" style="border: 1px solid lightgrey; padding: 20px; text-align: center; border-radius: 5px; height: 280px;">
                         <p style="text-decoration: underline; text-underline-offset: 5px;"><b>- {{ $s->title }} -</b></p>
                         <p>
