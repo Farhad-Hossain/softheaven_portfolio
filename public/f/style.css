@@ -3025,7 +3025,6 @@ body,
     left: 0;
     bottom: 0;
     content: "";
-    height: 350px;
     width: 100%;
     background: #ffffff;
     z-index: -1;

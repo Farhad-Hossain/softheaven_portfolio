@@ -10,9 +10,7 @@
                     <div class="site-heading text-center">
                         <h2>Innovative Team</h2>
                         <div class="devider"></div>
-                        <p>
-                            Outlived no dwelling denoting in peculiar as he believed. Behaviour excellent middleton be as it curiosity departure ourselves very extreme future. 
-                        </p>
+                        <p>Pioneering Excellence: Empowering Success Through Our Innovative Team</p>
                     </div>
                 </div>
             </div>

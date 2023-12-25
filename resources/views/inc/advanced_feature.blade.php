@@ -12,9 +12,7 @@
                     <div class="site-heading text-center">
                         <h2>Advanced features</h2>
                         <div class="devider"></div>
-                        <p>
-                            Outlived no dwelling denoting in peculiar as he believed. Behaviour excellent middleton be as it curiosity departure ourselves very extreme future. 
-                        </p>
+                        <p>Innovative Advancements Redefining the Norm: Unveiling the Cutting-Edge Features That Propel Excellence to New Heights!</p>
                     </div>
                 </div>
             </div>
@@ -31,7 +29,9 @@
                            <div class="info">
                                <h4>Fully Customizable</h4>
                                <p>
-                                   Passage weather as up am exposed. And natural related man subject. Eagerness get situation his was delighted.
+                                Experience unparalleled flexibility with our fully customizable solutions. 
+                                Tailor every aspect of your experience to meet your unique needs and preferences. 
+                                
                                </p>
                            </div>
                         </div>
@@ -45,13 +45,12 @@
                            </div>
                            <div class="info">
                                <h4>App Integration</h4>
-                               <p>
-                                   Passage weather as up am exposed. And natural related man subject. Eagerness get situation his was delighted
-                               </p>
+                               <p>Elevate your digital ecosystem with our App Integration service. Seamlessly connect and synchronize your applications to streamline workflows and enhance efficiency. </p>
                            </div>
                        </div>
                     </div>
                     <!-- End Single Item -->
+                    {{--
                     <!-- Single Item -->
                     <div class="single-item col-lg-3 col-md-6">
                         <div class="item">
@@ -67,6 +66,7 @@
                        </div>
                     </div>
                     <!-- End Single Item -->
+                    --}}
                     <!-- Single Item -->
                     <div class="single-item col-lg-3 col-md-6">
                         <div class="item">
@@ -75,9 +75,7 @@
                            </div>
                            <div class="info">
                                <h4>Drag And Drop</h4>
-                               <p>
-                                   Passage weather as up am exposed. And natural related man subject. Eagerness get situation his was delighted.
-                               </p>
+                               <p>From interface design and functionalities to workflow and user settings, our platform empowers you to shape the experience precisely to your liking.</p>
                            </div>
                         </div>
                     </div>

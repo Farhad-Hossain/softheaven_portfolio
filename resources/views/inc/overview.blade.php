@@ -1,9 +1,9 @@
 <!-- Start Overview 
     ============================================= -->
-    <div id="overview" class="overview-area relative default-padding-top">
+    <div id="overview" class="overview-area relative default-padding-top carousel-shadow" style="background: rgb(235, 246, 255);">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 offset-lg-2">
+                <div class="col-md-8 offset-lg-2">
                     <div class="site-heading text-center">
                         <h2>Quick Service Overview</h2>
                         <div class="devider"></div>
