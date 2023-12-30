@@ -34,6 +34,7 @@
     
     <script src="{{asset('f')}}/js/html5/html5shiv.min.js"></script>
     <script src="{{asset('f')}}/js/html5/respond.min.js"></script>
+    
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 

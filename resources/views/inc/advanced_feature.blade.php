@@ -21,7 +21,7 @@
         </div>
         <div class="container-fill">
             <div class="af-items">
-                <div class="row">
+                <div class="row d-flex justify-content-center row-eq-height">
                     <!-- Single Item -->
                     <div class="single-item col-lg-3 col-md-6">
                         <div class="item">
