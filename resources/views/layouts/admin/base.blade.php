@@ -82,15 +82,6 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        
-        var obj = {};
-        var ids = $("[id]");
-        ids.each(function (ind, el) {
-          idValue = $(el).attr('id');
-          if ( idValue !== '' ) {
-            console.log( idValue )
-          }
-        });
       })
 
       function ckEditor(id)

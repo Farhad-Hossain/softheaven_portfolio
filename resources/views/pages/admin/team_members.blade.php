@@ -93,10 +93,14 @@
 
 @push('js')
     <script>
-    $(document).on('click', `#member-add-btn`, ()=>{
+    $(document).on('click', `#member-add-btn`, function() {
         $(`#team-member-add-modal`).modal('show');
     })
     $(document).on('click', '.btn-delete', function() {
+        let c = confirm('Are you sure want to delete ? ');
+        if ( !c ) {
+            return 0;
+        }
         let id = $(this).data('id');
         let deleteResponse = getJson(`{{route('admin.delete_team_member')}}`, 'POST', {id: id})
         if ( deleteResponse.success ) {
@@ -104,5 +108,5 @@
             window.location = window.location
         }
     });
-    <script>
+    </script>
 @endpush
