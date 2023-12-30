@@ -4,10 +4,13 @@
         <div class="container">
             <div class="row align-center">
                 <div class="col-lg-5 info">
-                    <h2>Let's talk?</h2>
+                    <h2>Let's talk</h2>
+                    
                     <p>
-                        It's all about the humans behind a brand and those experiencing it, we're right there. In the middle.
+                    Engage with the Heart of Our Brand: Connecting with People, Crafting
+                    Experiences
                     </p>
+
                     <ul>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>

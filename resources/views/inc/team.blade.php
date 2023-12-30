@@ -10,7 +10,7 @@
                     <div class="site-heading text-center">
                         <h2>Innovative Team</h2>
                         <div class="devider"></div>
-                        <p>Pioneering Excellence: Empowering Success Through Our Innovative Team</p>
+                        <p>Driving Success: Fueling Excellence with Our Dynamic and Innovative Team</p>
                     </div>
                 </div>
             </div>

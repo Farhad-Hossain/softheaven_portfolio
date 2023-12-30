@@ -8,7 +8,8 @@
                         <div class="f-item about">
                             <img src="{{asset('storage')}}/{{$gs ? $gs->logo : ''}}" alt="Logo">
                             <p>
-                                Excellence decisively nay man yet impression for contrasted remarkably. There spoke happy for you are out. Fertile how old address did showing.
+                            Elevate with us! Our journey is woven with innovation, speaking volumes of
+                            happiness and success. Step into a realm of boundless potential and brilliance.
                             </p>
                             <span class="alert alert-success d-none" id="newsletter-success-alert"></span>
                             <form action="{{route('newsletter.create')}}" id="newsletter-form">

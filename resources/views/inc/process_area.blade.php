@@ -16,7 +16,8 @@
                             <div class="content wow fadeInUp" data-wow-delay="300ms">
                                 <h4>Research Project <span>Step - 01</span></h4>
                                 <p>
-                                    Sometimes furnished collected add for resources attention. Norland an by minuter.
+                                    Conduct thorough research and gather essential resources to lay a solid
+                                    foundation for your project.
                                 </p>
                             </div>
                         </li>
@@ -27,7 +28,8 @@
                             <div class="content wow fadeInUp" data-wow-delay="500ms">
                                 <h4>Targeting <span>Step - 02</span></h4>
                                 <p>
-                                    Bumetimes furnished collected add for resources attention. Norland an minister.
+                                Execute a targeted approach, aligning efforts with your project's goals for
+                                strategic and focused development.
                                 </p>
                             </div>
                         </li>
@@ -38,7 +40,8 @@
                             <div class="content wow fadeInUp" data-wow-delay="700ms">
                                 <h4>Result <span>Step - 03</span></h4>
                                 <p>
-                                    Sometimes furnished collected add for resources attention. Norland an by minuter. 
+                                Witness your vision come to life as SoftHeaven seamlessly executes the plan,
+                                delivering outcomes that exceed expectations.
                                 </p>
                             </div>
                         </li>

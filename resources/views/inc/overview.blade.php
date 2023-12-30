@@ -7,7 +7,7 @@
                     <div class="site-heading text-center">
                         <h2>Quick Service Overview</h2>
                         <div class="devider"></div>
-                        <p>Effortless Efficiency at Your Fingertips: Discover Our Swift and Seamless Solutions for a Streamlined Experience Tailored to Your Unique Needs!</p>
+                        <p>Effortless Efficiency Awaits: Explore Swift and Seamless Solutions for Your Unique Business Needs!</p>
                     </div>
                 </div>
             </div>
