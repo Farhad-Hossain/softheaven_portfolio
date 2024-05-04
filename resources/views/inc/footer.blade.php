@@ -1,136 +1,87 @@
-<!-- Start Footer 
-    ============================================= -->
-    <footer class="bg-dark text-light">
-        <div class="container">
-            <div class="f-items default-padding">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 item">
-                        <div class="f-item about">
-                            <img src="{{asset('storage')}}/{{$gs ? $gs->logo : ''}}" alt="Logo">
-                            <p>
-                            Elevate with us! Our journey is woven with innovation, speaking volumes of
-                            happiness and success. Step into a realm of boundless potential and brilliance.
-                            </p>
-                            <span class="alert alert-success d-none" id="newsletter-success-alert"></span>
-                            <form action="{{route('newsletter.create')}}" id="newsletter-form">
-                                @csrf
-                                <input type="email" placeholder="Your Email" class="form-control" name="email">
-                                <button type="submit" id='newsletter-submit-btn'> <i class="arrow_right"></i></button>  
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-6 item">
-                        <div class="f-item link">
-                            <h4 class="widget-title">Quick LInk</h4>
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Home</a>
-                                </li>
-                                <li>
-                                    <a href="#contact"><i class="fas fa-angle-right"></i> About us</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Company History</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Features</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('blog_details')}}"><i class="fas fa-angle-right"></i> Blog Page</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('login')}}"><i class="fas fa-angle-right"></i> Login</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 item">
-                        <div class="f-item link">
-                            <h4 class="widget-title">Community</h4>
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Career</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Leadership</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Strategy</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Services</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> History</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-angle-right"></i> Components</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 item">
-                        <div class="f-item contact-widget">
-                            <h4 class="widget-title">Contact Info</h4>
-                            <div class="address">
-                                <ul>
-                                    <li>
-                                        <div class="icon">
-                                            <i class="fas fa-home"></i>
-                                        </div>
-                                        <div class="content">
-                                            <strong>Address:</strong>
-                                            {{ $gs ? $gs->address : '' }}
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <i class="fas fa-envelope"></i>
-                                        </div>
-                                        <div class="content">
-                                            <strong>Email:</strong>
-                                            <a href="mailto:{{ $gs ? $gs->contact_email : '' }}">{{ $gs ? $gs->contact_email : '' }}</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <i class="fas fa-phone"></i>
-                                        </div>
-                                        <div class="content">
-                                            <strong>Phone:</strong>
-                                            <a href="tel:{{ $gs ? $gs->hotline_no : '' }}">{{ $gs ? $gs->hotline_no : '' }}</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Start Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <p>&copy; Copyright {{date('Y')}}. All Rights Reserved by <a href="{{ $gs->company_link }}">SoftHeaven</a></p>
-                    </div>
-                    <div class="col-lg-6 text-right link">
-                        <ul>
-                            <li>
-                                <a href="#">Terms</a>
-                            </li>
-                            <li>
-                                <a href="#">Privacy</a>
-                            </li>
-                            <li>
-                                <a href="#">Support</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Footer Bottom -->
-    </footer>
-    <!-- End Footer -->
+<!-- Footer Area -->
+		<footer id="footer" class="footer ">
+			<!-- Footer Top -->
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-6 col-12">
+							<div class="single-footer">
+								<h2>About Us</h2>
+								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p>
+								<!-- Social -->
+								<ul class="social">
+									<li><a href="#"><i class="icofont-facebook"></i></a></li>
+									<li><a href="#"><i class="icofont-google-plus"></i></a></li>
+									<li><a href="#"><i class="icofont-twitter"></i></a></li>
+									<li><a href="#"><i class="icofont-vimeo"></i></a></li>
+									<li><a href="#"><i class="icofont-pinterest"></i></a></li>
+								</ul>
+								<!-- End Social -->
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-12">
+							<div class="single-footer f-link">
+								<h2>Quick Links</h2>
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-12">
+										<ul>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>	
+										</ul>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12">
+										<ul>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Consuling</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Finance</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Testimonials</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
+											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>	
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-12">
+							<div class="single-footer">
+								<h2>Open Hours</h2>
+								<p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
+								<ul class="time-sidual">
+									<li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
+									<li class="day">Saturday <span>9.00-18.30</span></li>
+									<li class="day">Monday - Thusday <span>9.00-15.00</span></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 col-12">
+							<div class="single-footer">
+								<h2>Newsletter</h2>
+								<p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+								<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+									<input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''"
+										onblur="this.placeholder = 'Your email address'" required="" type="email">
+									<button class="button"><i class="icofont icofont-paper-plane"></i></button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Footer Top -->
+			<!-- Copyright -->
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-12">
+							<div class="copyright-content">
+								<p>© Copyright 2018  |  All Rights Reserved by <a href="https://www.wpthemesgrid.com" target="_blank">wpthemesgrid.com</a> </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Copyright -->
+		</footer>
+		<!--/ End Footer Area -->
