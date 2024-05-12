@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Controllers\Admin\SliderController;
 use Illuminate\Support\Facades\Route;
 use Auth;
 
@@ -59,6 +61,16 @@ Route::group(['prefix'=>'auth', 'as'=>'auth.'], function () {
 
   Route::get('users', [UserController::class, 'getUsers'])
     ->name('users');
+});
+
+
+Route::group(['prefix'=>'sliders', 'as'=>'sliders.', 'namespace'=>'Admin'], function () {
+  
+  Route::get('/', [SliderController::class, 'getSlidersList'])
+    ->name('list');
+
+  Route::get('/add', [SliderController::class, 'addSlider'])
+    ->name('add');
 
   
 });

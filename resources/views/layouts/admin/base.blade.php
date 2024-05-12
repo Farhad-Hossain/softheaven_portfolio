@@ -65,10 +65,27 @@
           
           <div id="content">
           @yield('content')
-          </div>
+
+
+          <div class="modal" tabindex="-1" role="dialog" id="baseModal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="base-modal-title"></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                  
+                </div>
+              </div>
+            </div>
+          </div>      
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
     <!-- Essential javascripts for application to work-->
     <script src="{{asset('b')}}/js/jquery-3.7.0.min.js"></script>
@@ -105,6 +122,13 @@
                   return data;
               }
           }).responseText);
+      }
+
+      function riseModal(title="", component)
+      {
+        $(`#base-modal-title`).text(title);
+        $(`#baseModal #modal-body`).empty().append( $(`#`+component).html() );
+        $(`#baseModal`).modal('show');
       }
     </script>
     @stack('js')
