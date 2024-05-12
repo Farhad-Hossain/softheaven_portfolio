@@ -69,7 +69,7 @@ Route::group(['prefix'=>'sliders', 'as'=>'sliders.', 'namespace'=>'Admin'], func
   Route::get('/', [SliderController::class, 'getSlidersList'])
     ->name('list');
 
-  Route::get('/add', [SliderController::class, 'addSlider'])
+  Route::post('/add', [SliderController::class, 'addSlider'])
     ->name('add');
 
   

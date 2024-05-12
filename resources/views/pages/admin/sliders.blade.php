@@ -29,14 +29,17 @@
                 @foreach($sliders as $s)
                 <tr>
                     <td>{{ $s->title }}</td>
-                    <td>{{ $s->description }}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $s->title_short_description }}</td>
                     <td>
+                        <img src="{{asset('uploaded_images/'.$s->photo)}}" style="width: 50px; height: 50px" alt="">
+                    </td>
+                    <td>{{ $s->first_button_text }}</td>
+                    <td>{{ $s->first_button_link }}</td>
+                    <td>{{ $s->second_button_text }}</td>
+                    <td>{{ $s->second_button_link }}</td>
+                    <td>{{ $s->is_active ? 'Active' : 'Inactive' }}</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning btn-edit">Edit</button>
                         <button class="btn btn-sm btn-danger btn-delete">Delete</button>
                     </td>
                 </tr>
@@ -47,15 +50,52 @@
 </div>
 
 <div id="form-add-slider" class="d-none">
-    <form action="" enctype="multipart/form-data" method="POST">
+    <form action="{{route('admin.sliders.add')}}" enctype="multipart/form-data" method="POST">
+        @csrf
         <div class="form-group">
             <label for="">Title</label>
-            <input type="text" name="title" class="form-control form-control-sm">
+            <input type="text" name="title" required>
         </div>
         <div class="form-group">
             <label for="">Short Description</label>
-            <textarea name="short-description" class="form-control form-control-sm" row="4"></textarea>
+            <textarea name="short_description" row="4" required></textarea>
         </div>
+        <div class="form-group">
+            <label for="">Photo</label>
+            <input type="file" name="photo" />
+        </div>
+        <div class="form-group">
+            <label for="">First Button Text</label>    
+            <input type="text" name="first_btn_text" />
+        </div>
+        <div class="form-group">
+            <label for="">First Button Link</label>    
+            <input type="text" name="first_btn_link" />
+        </div>
+        <div class="form-group">
+            <label for="">Second Button Text</label>    
+            <input type="text" name="second_btn_text" />
+        </div>
+        <div class="form-group">
+            <label for="">Second Button Link</label>    
+            <input type="text" name="second_btn_link" />
+        </div>
+        <div class="form-group">
+            <label for="">Active Status</label>    
+            <select name="is_active" id="" class="form-control form-control-sm">
+                <option value="1">Active</option>
+                <option value="0">Inactive</option>
+            </select>
+        </div>
+
+        
+        <hr />
+        <div class="form-group">
+            <input type="submit" class="btn btn-sm btn-success" value="Create Slider">
+            &nbsp;
+            <button class="btn btn-sm btn-warning">Cancel</button>
+        </div>
+        
     </form>
 </div>
 
