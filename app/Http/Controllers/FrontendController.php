@@ -10,6 +10,7 @@ use App\Models\TeamMember;
 use App\Models\GeneralSetting;
 use App\Models\ClientCompany;
 use App\Models\Blog;
+use App\Models\Slider;
 use DB;
 
 class FrontendController extends Controller
@@ -21,12 +22,14 @@ class FrontendController extends Controller
         $clients = ClientCompany::all();
         $blogs = Blog::latest()->take(3)->get();
         $testimonials = Testimonial::where('status', 1)->get();
+        $sliders = Slider::where('is_active', 1)->get();
         return view('welcome', compact(
             'teamMembers',
             'gs',
             'clients',
             'blogs',
-            'testimonials'
+            'testimonials',
+            'sliders'
         ));
     }
     public function saveContact(Request $request)

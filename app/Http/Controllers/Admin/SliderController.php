@@ -30,6 +30,7 @@ class SliderController extends Controller
             $slider->second_button_text = $request->second_btn_text;
             $slider->second_button_link = $request->second_btn_link; 
             $slider->is_active = $request->is_active;
+            $imageName = '';
             if ( $request->hasFile('photo') ) {
                 $imageName = time().'.'.request()->photo->getClientOriginalExtension();
                 request()->photo->move(public_path('uploaded_images'), $imageName);

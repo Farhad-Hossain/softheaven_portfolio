@@ -1,17 +1,19 @@
 <!-- Slider Area -->
 		<section class="slider">
 			<div class="hero-slider">
+
+			@foreach($sliders as $slider)
 				<!-- Start Single Slider -->
-				<div class="single-slider" style="background-image:url('{{asset("f")}}/img/slider2.jpg')">
+				<div class="single-slider" style="background-image:url('{{asset("uploaded_images")}}/{{$slider->photo}}')">
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-7">
 								<div class="text">
-									<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
+									<h1> {{ $slider->title }} </h1>
+									<p>{{ $slider->title_short_description }}</p>
 									<div class="button">
-										<a href="#" class="btn">Get Appointment</a>
-										<a href="#" class="btn primary">Learn More</a>
+										<a href="{{ $slider->first_button_link }}" class="btn">{{ $slider->first_button_text }}</a>
+										<a href="{{ $slider->second_button_link }}" class="btn primary">{{ $slider->second_button_text }}</a>
 									</div>
 								</div>
 							</div>
@@ -19,42 +21,8 @@
 					</div>
 				</div>
 				<!-- End Single Slider -->
-				<!-- Start Single Slider -->
-				<div class="single-slider" style="background-image:url('{{asset("f")}}/img/slider.jpg')">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-7">
-								<div class="text">
-									<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-									<div class="button">
-										<a href="#" class="btn">Get Appointment</a>
-										<a href="#" class="btn primary">About Us</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Start End Slider -->
-				<!-- Start Single Slider -->
-				<div class="single-slider" style="background-image:url('{{asset("f")}}/img/slider3.jpg')">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-7">
-								<div class="text">
-									<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p>
-									<div class="button">
-										<a href="#" class="btn">Get Appointment</a>
-										<a href="#" class="btn primary">Conatct Now</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End Single Slider -->
+			@endforeach
+				
 			</div>
 		</section>
 		<!--/ End Slider Area -->
