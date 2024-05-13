@@ -6,8 +6,10 @@
 							<!-- Contact -->
 							<ul class="top-link">
 								<li><a href="#">About</a></li>
-								<li><a href="#">Contact</a></li>
+								<li><a href="{{ route('contact') }}">Contact</a></li>
+								{{--
 								<li><a href="#">FAQ</a></li>
+								--}}
 							</ul>
 							<!-- End Contact -->
 						</div>

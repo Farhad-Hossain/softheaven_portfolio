@@ -23,7 +23,10 @@ Route::post('/newsletter-create', [FrontendController::class, 'createNewsletter'
 Route::get('blogs/{slug?}', [BlogController::class, 'blogView'])->name('blog_details');
 Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('contact', [FrontendController::class, 'contactPage'])->name('contact');
 Route::post('contact', [FrontendController::class, 'saveContact'])->name('save_contact');
+
 // Admin routes
 Route::prefix('admin')->as('admin.')->middleware('auth')->group(base_path('routes/admin.php'));
 

@@ -70,4 +70,9 @@ class FrontendController extends Controller
             'message'=> 'Thank you for connecting with us.'
         ]);
     }
+
+    public function contactPage(Request $request)
+    {
+        return view('pages.contact');
+    }
 }
