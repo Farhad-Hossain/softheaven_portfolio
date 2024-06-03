@@ -4167,6 +4167,9 @@ body{
 	display:inline-block;
 	margin-left:4px;
 }
+.blog-thumbnail {
+	aspect-ratio: 4 / 3;
+}
 /*=========================
 	End Footer CSS
 ===========================*/
