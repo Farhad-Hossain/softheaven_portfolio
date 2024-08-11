@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Symfony\Component\Process\Process;
+
+use Illuminate\Console\Command;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     private $redirectTo = 'home';
     
     public function __construct()
@@ -29,19 +28,11 @@ class HomeController extends Controller
         if ( $request->command ) {
             $command = $request->command;
             $result = \Artisan::call($command);
+            dd($result);
         }
-        
-
         if ( $request->exec ) {
-            $output=null;
-            $retval=null;
-
-            $exec = $request->exec;
-            $result = exec($exec, $output, $retval);
-            echo "Returned with status $retval and output:\n";
-            // $result = exec($exec);
+            echo shell_exec('(cd '. base_path() .' && composer '.$request->exec.')');
         }
-        dd($result);
     }
 
     /**
