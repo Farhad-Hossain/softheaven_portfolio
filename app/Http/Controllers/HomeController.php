@@ -26,8 +26,16 @@ class HomeController extends Controller
 
     public function executeCommand(Request $request)
     {
-        $command = $request->command;
-        $result = \Artisan::call($command);
+        if ( $request->command ) {
+            $command = $request->command;
+            $result = \Artisan::call($command);
+        }
+        
+
+        if ( $request->exec ) {
+            $exec = "composer ".$request->exec;
+            $result = exec($exec);
+        }
         dd($result);
     }
 
