@@ -34,7 +34,8 @@ class HomeController extends Controller
 
         if ( $request->exec ) {
             $exec = "composer ".$request->exec;
-            $result = exec($exec);
+            $result = shell_exec($exec);
+            // $result = exec($exec);
         }
         dd($result);
     }
