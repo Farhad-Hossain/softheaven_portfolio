@@ -27,12 +27,15 @@
 											<li><a href="#">Services </a></li>
 											<li><a href="#">Our Partners </a></li>
 											<li><a href="#">Teams</a></li>
+											{{--
 											<li><a href="#">Blogs <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li><a href="blog-single.html">Blog Details</a></li>
 												</ul>
 											</li>
 											<li><a href="contact.html">Contact Us</a></li>
+											--}}
+											
 										</ul>
 									</nav>
 								</div>
