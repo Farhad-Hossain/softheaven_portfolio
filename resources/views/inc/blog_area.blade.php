@@ -22,7 +22,7 @@
 								<div class="news-content">
 									<div class="date">{{ \Carbon\Carbon::parse($blog->publication_date)->format('d M, Y') }}</div>
 									<h2><a href="blog-single.html">{{ $blog->title }}</a></h2>
-									<p class="text">{!! shortenText(strip_tags($blog->content), 100) !!}</p>
+									<p class="text">{!! substr($blog->content, 0, 97) !!}...</p>
 								</div>
 							</div>
 						</div>
