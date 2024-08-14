@@ -13,10 +13,10 @@ class DumpAutoload extends Command
     protected $description = 'Run composer dump-autoload';
 
     private $command = '';
-    public function __construct($command)
+    public function __construct()
     {
         parent::__construct();
-        $this->command = $command;
+        $this->command = "dump-autoload";
     }
 
     public function handle()
