@@ -23,13 +23,10 @@
 											<li class="active">
                                                 <a href="{{route('welcome')}}">Home</a>
 											</li>
-											<li><a href="#">Doctos </a></li>
+											<li><a href="#">Projects </a></li>
 											<li><a href="#">Services </a></li>
-											<li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="404.html">404 Error</a></li>
-												</ul>
-											</li>
+											<li><a href="#">Our Partners </a></li>
+											<li><a href="#">Teams</a></li>
 											<li><a href="#">Blogs <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
 													<li><a href="blog-single.html">Blog Details</a></li>
