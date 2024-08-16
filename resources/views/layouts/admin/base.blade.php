@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
   <head>
     <title>{{ $title ?? 'Admin' }}</title>
     <meta charset="utf-8">
@@ -32,14 +32,14 @@
           <li class="breadcrumb-item"><a href="#">Blank Page</a></li>
         </ul>
       </div>
-      
+
       <div class="row">
         <div class="col-md-12">
           @if ($errors->any())
           <div class="card">
             <div class="card-header">Errors:</div>
             <div class="card-body">
-            
+
               <div class="alert alert-danger">
                   <ul>
                       @foreach ($errors->all() as $error)
@@ -59,10 +59,10 @@
 
           @if (session('error'))
               <div class="alert alert-danger">
-                  <b>{{ session('error') }}</b> 
+                  <b>{{ session('error') }}</b>
               </div>
           @endif
-          
+
           <div id="content">
           @yield('content')
 
@@ -77,11 +77,12 @@
                   </button>
                 </div>
                 <div class="modal-body" id="modal-body">
-                  
+
                 </div>
               </div>
             </div>
-          </div>      
+          </div>
+
         </div>
       </div>
     </div>
@@ -92,6 +93,7 @@
     <script src="{{asset('b')}}/js/bootstrap.min.js"></script>
     <script src="{{asset('b')}}/js/main.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="{{asset('b')}}/js/life_easy.js"></script>
     <script>
       $(document).ready(function () {
         $.ajaxSetup({
@@ -130,6 +132,20 @@
         $(`#baseModal #modal-body`).empty().append( $(`#`+component).html() );
         $(`#baseModal`).modal('show');
       }
+
+      $(`.modal-view`).click((event)=>{
+
+        event.preventDefault();
+
+        element = event.target;
+        url = $(element).attr('href');
+        response = getJson(url, 'GET', {});
+
+        $(`#baseModal`).find(`#base-modal-title`).html( $(element).attr('modal-title') );
+        $(`#baseModal`).find('.modal-body').html(response.html_content);
+        $(`#baseModal`).modal('show');
+
+      })
     </script>
     @stack('js')
   </body>

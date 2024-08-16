@@ -5,7 +5,7 @@
     <div class="card-header d-flex justify-content-between">
         <span>Sliders</span>
         <span>
-            <a href="{{route('admin.sliders.add')}}" id="slider-add-btn" class="btn btn-primary btn-sm">Add Slider</a> 
+            <a href="{{route('admin.sliders.add')}}" id="slider-add-btn" class="btn btn-primary btn-sm">Add Slider</a>
         </span>
     </div>
 
@@ -28,10 +28,10 @@
             <tbody>
                 @foreach($sliders as $s)
                 <tr>
-                    <td>{{ $s->title }}</td>
+                    <td contenteditable="true">{{ $s->title }}</td>
                     <td>{{ $s->title_short_description }}</td>
                     <td>
-                        <img src="{{asset('uploaded_images/'.$s->photo)}}" style="width: 50px; height: 50px" alt="">
+                        <img contenteditable="true" src="{{asset('uploaded_images/'.$s->photo)}}" style="width: 50px; height: 50px" alt="">
                     </td>
                     <td>{{ $s->first_button_text }}</td>
                     <td>{{ $s->first_button_link }}</td>
@@ -39,7 +39,10 @@
                     <td>{{ $s->second_button_link }}</td>
                     <td>{{ $s->is_active ? 'Active' : 'Inactive' }}</td>
                     <td>
-                        <button class="btn btn-sm btn-warning btn-edit">Edit</button>
+                        <a class="btn btn-sm btn-warning btn-edit modal-view-link"
+                            href="{{ route('admin.sliders.edit', ['id'=>$s->id]) }}"
+                            modal-title="Edit Slider Information"
+                            >Edit</a>
                         <button class="btn btn-sm btn-danger btn-delete">Delete</button>
                     </td>
                 </tr>
@@ -65,37 +68,37 @@
             <input type="file" name="photo" />
         </div>
         <div class="form-group">
-            <label for="">First Button Text</label>    
+            <label for="">First Button Text</label>
             <input type="text" name="first_btn_text" />
         </div>
         <div class="form-group">
-            <label for="">First Button Link</label>    
+            <label for="">First Button Link</label>
             <input type="text" name="first_btn_link" />
         </div>
         <div class="form-group">
-            <label for="">Second Button Text</label>    
+            <label for="">Second Button Text</label>
             <input type="text" name="second_btn_text" />
         </div>
         <div class="form-group">
-            <label for="">Second Button Link</label>    
+            <label for="">Second Button Link</label>
             <input type="text" name="second_btn_link" />
         </div>
         <div class="form-group">
-            <label for="">Active Status</label>    
+            <label for="">Active Status</label>
             <select name="is_active" id="" class="form-control form-control-sm">
                 <option value="1">Active</option>
                 <option value="0">Inactive</option>
             </select>
         </div>
 
-        
+
         <hr />
         <div class="form-group">
             <input type="submit" class="btn btn-sm btn-success" value="Create Slider">
             &nbsp;
             <button class="btn btn-sm btn-warning">Cancel</button>
         </div>
-        
+
     </form>
 </div>
 

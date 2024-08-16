@@ -20,10 +20,8 @@
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu">
-											<li class="active">
-                                                <a href="{{route('welcome')}}">Home</a>
-											</li>
-											<li><a href="#">Projects </a></li>
+										    <x-nav.link route="{{route('welcome')}}" class="active" text="Home"  />
+
 											<li><a href="#">Services </a></li>
 											<li><a href="#">Our Partners </a></li>
 											<li><a href="#">Teams</a></li>
@@ -35,7 +33,7 @@
 											</li>
 											<li><a href="contact.html">Contact Us</a></li>
 											--}}
-											
+
 										</ul>
 									</nav>
 								</div>
