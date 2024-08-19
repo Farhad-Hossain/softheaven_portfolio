@@ -113,6 +113,7 @@
       }
 
       function getJson(url, method='GET', data={}) {
+          
           return JSON.parse($.ajax({
               type: method,
               url: url,

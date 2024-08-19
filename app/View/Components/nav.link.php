@@ -11,7 +11,7 @@ class nav.link extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $link, public string $class, public string $text)
+    public function __construct(public string $route, public string $class, public string $text)
     {}
 
     /**

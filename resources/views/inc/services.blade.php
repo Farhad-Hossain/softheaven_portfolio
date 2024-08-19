@@ -1,5 +1,5 @@
 <!-- Start service -->
-		<section class="services section">
+		<section class="services section" id="service_section">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">

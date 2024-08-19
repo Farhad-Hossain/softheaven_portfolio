@@ -147,8 +147,8 @@
 						<div class="single-fun">
 							<i class="icofont-simple-smile"></i>
 							<div class="content">
-								<span class="counter">4379</span>
-								<p>Happy Patients</p>
+								<span class="counter">{{ $gs->trusted_clients_count }}</span>
+								<p>Happy Clients</p>
 							</div>
 						</div>
 						<!-- End Single Fun -->
@@ -158,7 +158,7 @@
 						<div class="single-fun">
 							<i class="icofont icofont-table"></i>
 							<div class="content">
-								<span class="counter">32</span>
+								<span class="counter">{{ $gs->year_of_experience ?? 1 }}</span>
 								<p>Years of Experience</p>
 							</div>
 						</div>

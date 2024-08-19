@@ -21,10 +21,9 @@
 									<nav class="navigation">
 										<ul class="nav menu">
 										    <x-nav.link route="{{route('welcome')}}" class="active" text="Home"  />
-
-											<li><a href="#">Services </a></li>
-											<li><a href="#">Our Partners </a></li>
-											<li><a href="#">Teams</a></li>
+											<x-nav.link route="#service_section" text="Services"  />
+											<x-nav.link route="" text="Projects"  />
+											<x-nav.link route="" text="Teams"  />
 											{{--
 											<li><a href="#">Blogs <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
