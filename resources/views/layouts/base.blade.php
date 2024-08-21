@@ -24,6 +24,11 @@
         <link rel="stylesheet" href="{{asset('f')}}/style.css">
         <link rel="stylesheet" href="{{asset('f')}}/css/responsive.css">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+		<style>
+			.single-service {
+				padding-left: 0px !important;
+			}
+		</style>
     </head>
 
     <body>

@@ -73,7 +73,7 @@
 						<div class="section-title">
 							<h2>We Are Always Ready to be part of your business.</h2>
 							<img src="{{asset('f')}}/img/section-img.png" alt="#">
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+							<p>We are happy to be determined to make business with you</p>
 						</div>
 					</div>
 				</div>
@@ -82,10 +82,10 @@
 						<!-- Start Single features -->
 						<div class="single-features">
 							<div class="signle-icon">
-								<i class="icofont icofont-ambulance-cross"></i>
+								<i class="icofont icofont-presentation"></i>
 							</div>
-							<h3>Emergency Help</h3>
-							<p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
+							<h3>Understanding </h3>
+							<p>We capture your detail requirements and Fix the process of work.</p>
 						</div>
 						<!-- End Single features -->
 					</div>
@@ -93,10 +93,10 @@
 						<!-- Start Single features -->
 						<div class="single-features">
 							<div class="signle-icon">
-								<i class="icofont icofont-medical-sign-alt"></i>
+								<i class="icofont icofont-architecture-alt"></i>
 							</div>
-							<h3>Enriched Pharmecy</h3>
-							<p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
+							<h3>Make work Done</h3>
+							<p>We do your work done in a defined work period, Get confirmation from you</p>
 						</div>
 						<!-- End Single features -->
 					</div>
@@ -104,10 +104,10 @@
 						<!-- Start Single features -->
 						<div class="single-features last">
 							<div class="signle-icon">
-								<i class="icofont icofont-stethoscope"></i>
+								<i class="icofont-handshake-deal"></i>
 							</div>
-							<h3>Medical Treatment</h3>
-							<p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
+							<h3>Happy with you</h3>
+							<p>We are happy to be happy with you through delivery</p>
 						</div>
 						<!-- End Single features -->
 					</div>
@@ -125,8 +125,8 @@
 						<div class="single-fun">
 							<i class="icofont icofont-home"></i>
 							<div class="content">
-								<span class="counter">3468</span>
-								<p>Hospital Rooms</p>
+								<span class="counter">13</span>
+								<p>Projects</p>
 							</div>
 						</div>
 						<!-- End Single Fun -->
@@ -136,8 +136,8 @@
 						<div class="single-fun">
 							<i class="icofont icofont-user-alt-3"></i>
 							<div class="content">
-								<span class="counter">557</span>
-								<p>Specialist Doctors</p>
+								<span class="counter">{{ count($teamMembers) }}</span>
+								<p>Team Members</p>
 							</div>
 						</div>
 						<!-- End Single Fun -->

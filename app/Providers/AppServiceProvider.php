@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\GeneralSetting;
 use App\Models\Service;
+use App\Models\TeamMember;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Blade;
@@ -31,7 +32,6 @@ class AppServiceProvider extends ServiceProvider
 
         Blade::directive('modalForm', function ($args) {
             $args = explode(',', preg_replace("/[\(\)]/", '', $args), 2);
-            dd($args);
             return `<div id="{$args['id']}" class="modal fade" role="dialog">
                     <div class="modal-dialog">
 
@@ -54,6 +54,7 @@ class AppServiceProvider extends ServiceProvider
 
         $gs = GeneralSetting::first();
         $services = Service::where('active_status', 1)->get();
+        $teamMembers = TeamMember::all();
         View::share(['gs' => $gs, 'services'=>$services]);
     }
 }
