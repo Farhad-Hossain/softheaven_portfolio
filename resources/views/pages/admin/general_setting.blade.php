@@ -47,12 +47,17 @@
                 <input type="file" name="logo" value="{{$gs->logo ?? ''}}">
             </div>
 
-            <div class="col-sm-12 col-md-6 mb-3">
+            <div class="col-sm-12 col-md-4 mb-3">
+                <label for="">Years of Experience</label>
+                <input type="number" name="year_of_experience" class="form-control" value="{{$gs->year_of_experience ?? 0}}" required>
+            </div>
+
+            <div class="col-sm-12 col-md-4 mb-3">
                 <label for="">Promo Video Link</label>
                 <input type="text" name="promo_video_link" maxlength="250" value="{{$gs->promo_video_link ?? ''}}">
             </div>
 
-            <div class="col-sm-12 col-md-6 mb-3">
+            <div class="col-sm-12 col-md-4 mb-3">
                 <label for="">Company Link</label>
                 <input type="url" name="company_link" maxlength="250" value="{{$gs->company_link ?? ''}}" required>
             </div>
@@ -66,6 +71,8 @@
                 <label for="">Sub Title Message</label>
                 <textarea name="sub_title_message" class="form-control" id="" cols="30" rows="3" required>{{$gs->sub_title_message ?? ''}}</textarea>
             </div>
+
+            
 
             <div class="col-sm-12 mb-3">
                 <button type="submit" class="btn btn-success">Submit</button>
