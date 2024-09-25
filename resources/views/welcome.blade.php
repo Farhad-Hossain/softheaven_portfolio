@@ -175,9 +175,12 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>We Offer Different Services To Improve Your Health</h2>
+							<h2>We Offer Different Services To Improve Your Business</h2>
 							<img src="{{asset('f')}}/img/section-img.png" alt="#">
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+							<p>	
+								We are a software development team specializing in innovative solutions for businesses of all sizes. 
+								Our team of expert developers and engineers is committed to delivering high-quality, customized software to meet your unique needs.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -186,21 +189,24 @@
 						<!-- Start Choose Left -->
 						<div class="choose-left">
 							<h3>Who We Are</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra antege vel est lobortis, a commodo magna rhoncus. In quis nisi non emet quam pharetra commodo. </p>
-							<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+							<p>
+								We pride ourselves on staying at the forefront of technology trends, ensuring that our clients receive cutting-edge solutions that drive their business forward. 
+								From web and mobile applications to enterprise software and cloud solutions, we have the expertise to tackle any development challenge."
+							</p>
+							<!-- <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p> -->
 							<div class="row">
 								<div class="col-lg-6">
 									<ul class="list">
-										<li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-										<li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-										<li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+										<li><i class="fa fa-caret-right"></i>Agile methodologies </li>
+										<li><i class="fa fa-caret-right"></i>Full-stack dev team</li>
+										<li><i class="fa fa-caret-right"></i>Cloud expertises</li>
 									</ul>
 								</div>
 								<div class="col-lg-6">
 									<ul class="list">
-										<li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-										<li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-										<li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+										<li><i class="fa fa-caret-right"></i>Quality assurance and testing</li>
+										<li><i class="fa fa-caret-right"></i>Data analytics</li>
+										<li><i class="fa fa-caret-right"></i>IoT solutions</li>
 									</ul>
 								</div>
 							</div>
@@ -236,8 +242,12 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-12">
 						<div class="content">
-							<h2>Do you need Emergency Medical Care? Call @ 1234 56789</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porttitor dictum turpis nec gravida.</p>
+							<h2>Do you need Urgent IT Consultancy? Call @ 01730622454</h2>
+							<p>
+								We offer expert IT consultancy services to address your most urgent needs. 
+								Our team provides quick, reliable solutions to ensure your systems run smoothly.
+								Don't let technical challenges slow you down—reach out to us today for immediate support!
+							</p>
 							<div class="button">
 								<a href="#" class="btn">Contact Now</a>
 								<a href="#" class="btn second">Learn More<i class="fa fa-long-arrow-right"></i></a>

@@ -4,9 +4,9 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>We Maintain Cleanliness Rules Inside Our Hospital</h2>
+							<h2>Our Remarkable Software & Solutions</h2>
 							<img src="{{asset('f')}}/img/section-img.png" alt="#">
-							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+							<!-- <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p> -->
 						</div>
 					</div>
 				</div>
