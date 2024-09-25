@@ -33,8 +33,10 @@ class GeneralSettingController extends Controller
                 $gs->contact_no_2 = $request->contact_no_2;
                 $gs->contact_email = $request->email;
                 $gs->company_link = $request->company_link;
+                $gs->year_of_experience = $request->year_of_experience;
                 $gs->created_by = Auth::user()->id;
                 $gs->updated_by = Auth::user()->id;
+
 
                 $logoName = $gs ? $gs->logo : '#';
                 $iconName = $gs ? $gs->address_bar_icon : '#';

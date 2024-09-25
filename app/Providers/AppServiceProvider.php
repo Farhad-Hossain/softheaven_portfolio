@@ -53,6 +53,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $gs = GeneralSetting::first();
+        // dd($gs);
         $services = Service::where('active_status', 1)->get();
         $teamMembers = TeamMember::all();
         View::share(['gs' => $gs, 'services'=>$services]);
