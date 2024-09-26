@@ -264,6 +264,7 @@
 		@include('inc.services')
 		
 		<!-- Pricing Table -->
+		{{--
 		<section class="pricing-table section">
 			<div class="container">
 				<div class="row">
@@ -364,6 +365,7 @@
 			</div>	
 		</section>	
 		<!--/ End Pricing Table -->
+		--}}
 		
         @include('inc.blog_area')
 		
@@ -417,7 +419,7 @@
 						<!-- Start Newsletter Form -->
 						<div class="subscribe-text ">
 							<h6>Sign up for newsletter</h6>
-							<p class="">Cu qui soleat partiendo urbanitas. Eum aperiri indoctum eu,<br> homero alterum.</p>
+							<p class="">Subscribe now to stay updated with our latest news and offers!</p>
 						</div>
 						<!-- End Newsletter Form -->
 					</div>

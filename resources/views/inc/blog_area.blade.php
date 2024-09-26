@@ -4,7 +4,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>Our Blog Post About Software Development</h2>
+							<h2>Our Blog Post </h2>
 							<img src="{{asset('f')}}/img/section-img.png" alt="#">
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
