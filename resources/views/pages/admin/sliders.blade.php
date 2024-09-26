@@ -43,7 +43,7 @@
                             href="{{ route('admin.sliders.edit', ['id'=>$s->id]) }}"
                             modal-title="Edit Slider Information"
                             >Edit</a>
-                        <button class="btn btn-sm btn-danger btn-delete">Delete</button>
+                        <button class="btn btn-sm btn-danger slider-btn-delete" data-id="{{$s->id}}" data-title="{{$s->title}}">Delete</button>
                     </td>
                 </tr>
                 @endforeach
@@ -102,14 +102,27 @@
     </form>
 </div>
 
-
 @endsection
 
 @push('js')
-<script>
+<script>    
     $(`body #slider-add-btn`).on('click', (e)=>{
         e.preventDefault();
         riseModal('Demo Modal', `form-add-slider` );
+    })
+    $(`body .slider-btn-delete`).on('click', async (e)=> {
+        e.preventDefault();
+        if ( await confirm() ) {
+            let id = $(e.target).data('id');
+            let url = `{{route('admin.sliders.delete', ':id')}}`.replace(':id', id);
+            let res = getJson(url, 'POST', {
+                id: id,
+            })
+            if ( res.success ) {
+                location.reload();
+            }
+
+        }
     })
 </script>
 @endpush

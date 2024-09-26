@@ -83,6 +83,28 @@
             </div>
           </div>
 
+
+          <!-- START:: Confirm Dialog modal -->
+          <div class="modal fade" id="confirmDialogModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="confirmModalLabel">Confirm Action</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" id="confirmModalBody">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="cancelBtn" class="btn btn-secondary" data-dismiss="modal"></button>
+                  <button type="button" id="confirmBtn" class="btn btn-primary"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END:: Confirm Dialog modal -->
+
         </div>
       </div>
     </div>
@@ -95,6 +117,33 @@
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script src="{{asset('b')}}/js/life_easy.js"></script>
     <script>
+      // Confirm Dialog box
+      function confirm(body='Are you sure you want to proceed with this action ?', cancel_btn="Cancel", confirm_btn="Yes, Proceed") {
+        $(`#confirmModalBody`).html(body);
+        $(`#cancelBtn`).html(cancel_btn);
+        $(`#confirmBtn`).html(confirm_btn);
+
+        return new Promise(function (resolve, reject) {
+            var modal = document.getElementById('confirmDialogModal');
+            $('#confirmDialogModal').modal('show');
+
+            $('#confirmBtn').on('click', function () {
+                $('#confirmDialogModal').modal('hide');
+                resolve(true);
+            })
+            $('#cancelBtn').on('click', function () {
+                $('#confirmDialogModal').modal('hide');
+                resolve(false);
+            })
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    $('#confirmDialogModal').modal('hide');
+                    resolve(false);
+                }
+            };
+        })        
+      }
+
       $(document).ready(function () {
         $.ajaxSetup({
             headers: {
@@ -113,7 +162,6 @@
       }
 
       function getJson(url, method='GET', data={}) {
-          
           return JSON.parse($.ajax({
               type: method,
               url: url,

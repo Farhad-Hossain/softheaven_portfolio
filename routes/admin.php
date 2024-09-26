@@ -75,5 +75,8 @@ Route::group(['prefix'=>'sliders', 'as'=>'sliders.', 'namespace'=>'Admin'], func
   Route::match(['GET', 'POST'], 'edit/{id}', [SliderController::class, 'editSlider'])
     ->name('edit');
 
+  Route::match(['POST', 'delete'], 'delete/{slider}', [SliderController::class, 'deleteSlider'])
+    ->name('delete');
+
   
 });

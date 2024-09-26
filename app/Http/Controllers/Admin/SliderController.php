@@ -58,4 +58,21 @@ class SliderController extends Controller
             }
         }
     }
+
+    public function deleteSlider(Request $request, Slider $slider)
+    {
+        try {
+            $slider->delete();
+            session()->flash('success', 'Slider deleted successfully');
+            return response()->json([
+                'success'=> true,
+                'message'=> 'Slider deleted successfully'
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success'=> false,
+                'message'=> $e->getMessage(),
+            ]);
+        }
+    }
 }
