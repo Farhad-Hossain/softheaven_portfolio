@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('b')}}/css/main.css">
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <title>Login - SoftHeaven</title>
+    <title>Login - TeamFarhad</title>
   </head>
   <body>
     <section class="material-half-bg">
@@ -24,7 +24,7 @@
     </section>
     <section class="login-content">
       <div class="logo">
-        <h1>Softheaven</h1>
+        <h1>TeamFarhad</h1>
       </div>
       <div class="login-box">
         
