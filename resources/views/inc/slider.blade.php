@@ -12,8 +12,12 @@
 									<h1> {{ $slider->title }} </h1>
 									<p>{{ $slider->title_short_description }}</p>
 									<div class="button">
-										<a href="{{ $slider->first_button_link }}" class="btn">{{ $slider->first_button_text }}</a>
-										<a href="{{ $slider->second_button_link }}" class="btn primary">{{ $slider->second_button_text }}</a>
+										@if( $slider->first_button_link && $slider->first_button_text )
+											<a href="{{ $slider->first_button_link }}" class="btn">{{ $slider->first_button_text }}</a>
+										@endif
+										@if( $slider->second_button_link && $slider->second_button_text )
+											<a href="{{ $slider->second_button_link }}" class="btn primary">{{ $slider->second_button_text }}</a>
+										@endif
 									</div>
 								</div>
 							</div>
