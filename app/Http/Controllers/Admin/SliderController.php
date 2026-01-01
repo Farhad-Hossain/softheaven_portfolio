@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Slider;
 use Illuminate\Http\Request;
-use helpers;
+use App\Services\Helper;
 
 class SliderController extends Controller
 {
@@ -69,7 +69,7 @@ class SliderController extends Controller
 
 
                 if ( $request->photo ) {
-                    $file_info = get_file_info($request->photo);
+                    $file_info = Helper::get_file_info($request->photo);
                     $imageName = $file_info['name'];
                     $imageName = time().'.'.$file_info['extension'];
                     $request->photo->move(public_path('uploaded_images'), $imageName);
