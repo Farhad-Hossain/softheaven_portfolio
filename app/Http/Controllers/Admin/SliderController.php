@@ -47,14 +47,37 @@ class SliderController extends Controller
     {
         if ($request->method() == 'GET'){
             $slider = Slider::findOrFail($request->id);
+            $slider_edit_form = view('admin.inc.slider_edit_form', compact('slider'))->render();
             return response()->json([
-                'html_content' => "Hello, demo"
+                'html_content' => $slider_edit_form
             ]);
-        } else {
+        }
+
+
+        if ($request->method() == 'POST') {
             try {
+                $slider = Slider::findOrFail($request->id);
+                $slider->title = $request->title;
+                $slider->title_short_description = $request->short_description;
+                $slider->first_button_text = $request->first_btn_text;
+                $slider->first_button_link = $request->first_btn_link;
+                $slider->second_button_text = $request->second_btn_text;
+                $slider->second_button_link = $request->second_btn_link;
+                $slider->is_active = $request->is_active;
+                $imageName = '';
 
-            } catch (\Exception $e) {
 
+                if ( $request->photo ) {
+                    $file_info = get_file_info($request->photo);
+                    $imageName = $file_info['name'];
+                    $imageName = time().'.'.$file_info['extension'];
+                    $request->photo->move(public_path('uploaded_images'), $imageName);
+                }
+                $slider->photo = $imageName;
+                $slider->save();
+                return redirect()->back()->with('success', 'Slider updated successfully');
+            } catch (\Exception $ex) {
+                return redirect()->back()->with('error', $ex->getMessage());
             }
         }
     }
