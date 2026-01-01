@@ -13,8 +13,10 @@ if ( !function_exists('shortenText') ) {
         if ( strlen($text) > $length ) {
             return substr($text, 0, $length-strlen($ending) ).$ending;
         }
-    }
+    }   
+}
 
+if ( !function_exists('get_file_info') ) {
     function get_file_info($file)
     {
         $file_info = [
