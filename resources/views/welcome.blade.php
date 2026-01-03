@@ -249,7 +249,7 @@
 								Don't let technical challenges slow you down—reach out to us today for immediate support!
 							</p>
 							<div class="button">
-								<a href="#" class="btn">Contact Now</a>
+								<a href="#contact" class="btn">Contact Now</a>
 								<a href="#" class="btn second">Learn More<i class="fa fa-long-arrow-right"></i></a>
 							</div>
 						</div>
@@ -370,6 +370,7 @@
         @include('inc.blog_area')
 		
 		<!-- Start clients -->
+		{{--
 		<div class="clients overlay">
 			<div class="container">
 				<div class="row">
@@ -407,6 +408,7 @@
 				</div>
 			</div>
 		</div>
+		--}}
 		<!--/Ens clients -->
 		
 		@include('inc.contact')

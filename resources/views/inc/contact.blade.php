@@ -1,12 +1,12 @@
 <!-- Start Appointment -->
-<section class="appointment">
+<section class="appointment" id="contact">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
                     <h2>We Are Always Ready to Help You. Book An Appointment</h2>
                     <img src="{{asset('f')}}/img/section-img.png" alt="#">
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
+                    <p>Our team of expert developers and engineers is committed to delivering high-quality, customized software to meet your unique needs.</p>
                 </div>
             </div>
         </div>
@@ -31,30 +31,18 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="form-group">
-                                <div class="nice-select form-control wide" tabindex="0"><span class="current">Department</span>
+                                <div class="nice-select form-control wide" tabindex="0"><span class="current">Asking Area</span>
                                     <ul class="list">
-                                        <li data-value="1" class="option selected ">Department</li>
-                                        <li data-value="2" class="option">Cardiac Clinic</li>
-                                        <li data-value="3" class="option">Neurology</li>
-                                        <li data-value="4" class="option">Dentistry</li>
-                                        <li data-value="5" class="option">Gastroenterology</li>
+                                        <li data-value="0" class="option selected ">------</li>
+                                        <li data-value="2" class="option">Web Development & Design</li>
+                                        <li data-value="3" class="option">ERP Solution</li>
+                                        <li data-value="4" class="option">Mobile App Development</li>
+                                        <li data-value="5" class="option">Digital Marketing</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <div class="nice-select form-control wide" tabindex="0"><span class="current">Doctor</span>
-                                    <ul class="list">
-                                        <li data-value="1" class="option selected ">Doctor</li>
-                                        <li data-value="2" class="option">Dr. Akther Hossain</li>
-                                        <li data-value="3" class="option">Dr. Dery Alex</li>
-                                        <li data-value="4" class="option">Dr. Jovis Karon</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
+                        <div class="col-lg-12 col-md-12 col-12">
                             <div class="form-group">
                                 <input type="text" placeholder="Date" id="datepicker">
                             </div>
