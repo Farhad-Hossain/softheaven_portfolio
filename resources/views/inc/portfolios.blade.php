@@ -6,7 +6,7 @@
 						<div class="section-title">
 							<h2>Our Remarkable Software & Solutions</h2>
 							<img src="{{asset('f')}}/img/section-img.png" alt="#">
-							<!-- <p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p> -->
+							<p>Our team of expert developers and engineers is committed to delivering high-quality, customized software to meet your unique needs.</p>
 						</div>
 					</div>
 				</div>

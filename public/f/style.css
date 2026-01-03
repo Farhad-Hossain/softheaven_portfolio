@@ -1137,6 +1137,7 @@ body{
 }
 .portfolio .single-pf{
 	position:relative;
+	height: 400px;
 }
 .portfolio .single-pf img{
 	height:100%;
