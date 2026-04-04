@@ -14,6 +14,17 @@
         <a class="app-menu__item" href="{{route('home')}}"><i class="app-menu__icon bi bi-speedometer"></i><span class="app-menu__label">Dashboard</span></a>
       </li>
 
+      <li class="treeview">
+        <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon bi bi-speedometer"></i><span class="app-menu__label">Cashbook</span><i class="treeview-indicator bi bi-chevron-right"></i></a>
+        <ul class="treeview-menu">
+          <li>
+            <a class="treeview-item" href="{{route('admin.cashbook.add')}}">
+                 <span class="submenu"> Entry</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
       <!-- START ... Permisions & Group   -->
       <li class="treeview">
         <a class="app-menu__item" href="#" data-toggle="treeview">

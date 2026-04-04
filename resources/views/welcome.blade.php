@@ -147,7 +147,7 @@
 						<div class="single-fun">
 							<i class="icofont-simple-smile"></i>
 							<div class="content">
-								<span class="counter">{{ $gs->trusted_clients_count }}</span>
+								<span class="counter">{{ $gs?->trusted_clients_count }}</span>
 								<p>Happy Clients</p>
 							</div>
 						</div>

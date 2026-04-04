@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\CashbookController;
 use Illuminate\Support\Facades\Route;
 use Auth;
 
@@ -76,6 +77,21 @@ Route::group(['prefix'=>'sliders', 'as'=>'sliders.', 'namespace'=>'Admin'], func
     ->name('edit');
 
   Route::match(['POST', 'delete'], 'delete/{slider}', [SliderController::class, 'deleteSlider'])
+    ->name('delete');
+
+  
+});
+
+
+Route::group(['prefix'=>'cashbook', 'as'=>'cashbook.', 'namespace'=>'Admin'], function () {
+
+  Route::match(['GET', 'POST'], '/add', [CashbookController::class, 'addEntry'])
+    ->name('add');
+
+  Route::match(['GET', 'POST'], 'edit/{id}', [CashbookController::class, 'editEntry'])
+    ->name('edit');
+
+  Route::match(['POST', 'delete'], 'delete/{id}', [CashbookController::class, 'deleteEntry'])
     ->name('delete');
 
   
