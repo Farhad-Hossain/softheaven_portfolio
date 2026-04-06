@@ -85,6 +85,17 @@ Route::group(['prefix'=>'sliders', 'as'=>'sliders.', 'namespace'=>'Admin'], func
 
 Route::group(['prefix'=>'cashbook', 'as'=>'cashbook.', 'namespace'=>'Admin'], function () {
 
+  Route::get('/books', [CashbookController::class, 'getBooks'])
+    ->name('books');
+
+  Route::get('/books/edit/{id}', [CashbookController::class, 'editBook'])
+    ->name('books.edit');
+
+  Route::post('/books/delete/{id}', [CashbookController::class, 'deleteBook'])
+    ->name('books.delete');
+
+  
+
   Route::match(['GET', 'POST'], '/add', [CashbookController::class, 'addEntry'])
     ->name('add');
 
