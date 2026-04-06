@@ -117,32 +117,39 @@
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script src="{{asset('b')}}/js/life_easy.js"></script>
     <script>
-      // Confirm Dialog box
-      function confirm(body='Are you sure you want to proceed with this action ?', cancel_btn="Cancel", confirm_btn="Yes, Proceed") {
-        $(`#confirmModalBody`).html(body);
-        $(`#cancelBtn`).html(cancel_btn);
-        $(`#confirmBtn`).html(confirm_btn);
+      function confirm(body = 'Are you sure you want to proceed with this action?', cancel_btn = "Cancel", confirm_btn = "Yes, Proceed") {
+        $('#confirmModalBody').html(body);
+        $('#cancelBtn').html(cancel_btn);
+        $('#confirmBtn').html(confirm_btn);
 
-        return new Promise(function (resolve, reject) {
+        return new Promise(function (resolve) {
             var modal = document.getElementById('confirmDialogModal');
             $('#confirmDialogModal').modal('show');
 
-            $('#confirmBtn').on('click', function () {
+            function cleanup() {
                 $('#confirmDialogModal').modal('hide');
+                window.removeEventListener('click', onBackdropClick);
+            }
+
+            $('#confirmBtn').one('click', function () {
+                cleanup();
                 resolve(true);
-            })
-            $('#cancelBtn').on('click', function () {
-                $('#confirmDialogModal').modal('hide');
+            });
+
+            $('#cancelBtn').one('click', function () {
+                cleanup();
                 resolve(false);
-            })
-            window.onclick = function(event) {
+            });
+
+            function onBackdropClick(event) {
                 if (event.target == modal) {
-                    $('#confirmDialogModal').modal('hide');
+                    cleanup();
                     resolve(false);
                 }
-            };
-        })        
-      }
+            }
+            window.addEventListener('click', onBackdropClick);
+        });
+    }
 
       $(document).ready(function () {
         $.ajaxSetup({

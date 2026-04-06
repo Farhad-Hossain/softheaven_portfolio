@@ -10,6 +10,31 @@ use App\Models\CashBook;
 
 class CashbookController extends Controller
 {
+    public function addBook(Request $request)
+    {
+        if ( $request->method() == 'GET' ) {
+            $view = view('admin.cashbook.books.add');
+            if ( $request->ajax() ) {
+                $view = $view->render();
+                return response()->json([
+                    'status' => 'success',
+                    'html_content' => $view,
+                    'title' => 'Add Book'
+                ]);
+            }
+            return $view;
+        }
+
+        if ( $request->method() == 'POST' ) {
+            $book = new CashBook();
+            $book->name = $request->name;
+            $book->save();
+            session()->flash('success', 'Book added successfully');
+            return redirect()->route('admin.cashbook.books');
+        }
+    }
+
+
     public function getBooks(Request $request)
     {
         $books = CashBook::all();
@@ -34,6 +59,7 @@ class CashbookController extends Controller
     {
         $book = CashBook::find($id);
         $book->delete();
+        session()->flash('success', 'Book deleted successfully');
         return redirect()->route('admin.cashbook.books');
     }
 
