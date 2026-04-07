@@ -24,7 +24,7 @@
                         <a href="{{route('admin.cashbook.book.view', ['book_id' => $book->id])}}" class="btn btn-sm btn-link">{{ $book->name }}</a>
                     </td>
                     <td>
-                        <a href="{{route('admin.cashbook.edit', $book->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="{{route('admin.cashbook.books.edit', $book->id)}}" class="btn btn-primary btn-sm">Edit</a>
                         <a href="{{route('admin.cashbook.books.delete', $book->id)}}" class="btn btn-danger btn-sm btn-delete-cashbook">Delete</a>
                     </td>
                 </tr>
