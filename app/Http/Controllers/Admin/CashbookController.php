@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\CashEntryCategory;
 use App\Models\CashEntryType;
 use App\Models\CashBook;
+use App\Models\CashEntry;
+use App\Models\CashPaymentMode;
 
 class CashbookController extends Controller
 {
@@ -41,6 +43,15 @@ class CashbookController extends Controller
         return view('admin.cashbook.books', compact('books'));
     }
 
+    public function viewBook(Request $request, $book_id) {
+        $book = CashBook::find($book_id);
+        $entries = CashEntry::where('book_id', $book_id)->get();
+        $paymentModes = CashPaymentMode::all();
+        $categories = CashEntryCategory::all();
+        $entryTypes = CashEntryType::all();
+        return view('admin.cashbook.books.view', compact('book', 'entries', 'paymentModes', 'categories', 'entryTypes'));
+    }
+
     public function editBook(Request $request, $id)
     {
         $book = CashBook::find($id);
@@ -65,9 +76,19 @@ class CashbookController extends Controller
 
     public function addEntry(Request $request)
     {
-        $entryTypes = CashEntryType::where('status', 1)->orderBy('id', 'desc')->get();
-        $categories = CashEntryCategory::where('status', 1)->orderBy('id', 'asc')->get();
-        return view('admin.cashbook.add', compact('entryTypes', 'categories'));
+        $entry = new CashEntry();
+        $entry->book_id = $request->book_id;
+        $entry->cash_entry_type_id = $request->cash_entry_type_id;
+        $entry->category_id = $request->category_id;
+        $entry->amount = $request->amount;
+        $entry->payment_mode_id = $request->payment_mode_id;
+        $entry->entry_date = $request->entry_date;
+        $entry->entry_time = $request->entry_time;
+        $entry->contact_person = $request->contact_person;
+        $entry->remarks = $request->remarks;
+        $entry->save();
+        session()->flash('success', 'Entry added successfully');
+        return redirect()->back();
     }
 
     public function editEntry(Request $request, $id)

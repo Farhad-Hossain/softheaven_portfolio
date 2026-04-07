@@ -91,15 +91,20 @@ Route::group(['prefix'=>'cashbook', 'as'=>'cashbook.', 'namespace'=>'Admin'], fu
   Route::get('/books', [CashbookController::class, 'getBooks'])
     ->name('books');
 
+  Route::get('/books/view/{book_id}', [CashbookController::class, 'viewBook'])
+    ->name('book.view');
+
   Route::get('/books/edit/{id}', [CashbookController::class, 'editBook'])
     ->name('books.edit');
 
   Route::post('/books/delete/{id}', [CashbookController::class, 'deleteBook'])
     ->name('books.delete');
 
-  Route::match(['GET', 'POST'], '/add', [CashbookController::class, 'addEntry'])
-    ->name('add');
+  Route::match(['GET', 'POST'], '/entries/add', [CashbookController::class, 'addEntry'])
+    ->name('entries.add');
 
-  Route::match(['GET', 'POST'], 'edit/{id}', [CashbookController::class, 'editEntry'])
-    ->name('edit');
+  Route::match(['GET', 'POST'], '/entries/edit/{id}', [CashbookController::class, 'editEntry'])
+    ->name('entries.edit');
+
+
 });

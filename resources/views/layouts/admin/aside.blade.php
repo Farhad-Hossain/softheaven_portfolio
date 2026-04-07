@@ -18,7 +18,7 @@
         <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon bi bi-speedometer"></i><span class="app-menu__label">Cashbook</span><i class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
           @include('components.inc.sub_menu', ['route' => route('admin.cashbook.books'), 'label' => 'Cashbooks'])
-          @include('components.inc.sub_menu', ['route' => route('admin.cashbook.add'), 'label' => 'Entry'])
+          @include('components.inc.sub_menu', ['route' => route('admin.cashbook.entries.add'), 'label' => 'Entry'])
         </ul>
       </li>
 
