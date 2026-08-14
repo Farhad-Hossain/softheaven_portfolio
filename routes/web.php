@@ -27,7 +27,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('contact', [FrontendController::class, 'contactPage'])->name('contact');
 Route::post('contact', [FrontendController::class, 'saveContact'])->name('save_contact');
 
-Route::get('projects/shopno-internation', [FrontendController::class, 'projects_shopno_international'])->name('projects_shopno_internation');
+Route::get('projects/shopno-international', [FrontendController::class, 'projects_shopno_international'])->name('projects_shopno_international');
 
 // Admin routes
 Route::prefix('admin')->as('admin.')->middleware('auth')->group(base_path('routes/admin.php'));
