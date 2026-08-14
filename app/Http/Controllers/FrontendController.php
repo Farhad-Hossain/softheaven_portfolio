@@ -75,4 +75,12 @@ class FrontendController extends Controller
     {
         return view('pages.contact');
     }
+
+    public function projects_shopno_international(Request $request)
+    {
+        $title = "Shpno International";
+        return view('pages.projects.shopno_international', compact(
+            'title'
+        ));
+    }
 }
