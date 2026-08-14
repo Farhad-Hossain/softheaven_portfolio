@@ -78,6 +78,8 @@
   header.nav.solid .brand-name{color:var(--ink);}
   .brand-sub{display:block; font-family:var(--mono); font-weight:400; font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-top:1px;}
 
+  header.nav.solid .brand-sub{font-weight: bold; color:var(--ink);}
+
   nav.links{display:flex; gap:28px; font-size:.86rem; font-weight:500;}
   nav.links a{color:rgba(244,246,241,0.78); position:relative; padding:4px 0;}
   header.nav.solid nav.links a{color:rgba(13,27,42,0.72);}
@@ -90,7 +92,46 @@
   }
   .nav-cta:hover{background:transparent; color:var(--paper);}
   header.nav.solid .nav-cta:hover{color:var(--green);}
-  .nav-toggle{display:none;}
+
+  /* hamburger toggle */
+  .nav-toggle{
+    display:none; flex-direction:column; justify-content:center; align-items:center;
+    width:38px; height:38px; background:transparent; border:none; cursor:pointer; padding:0;
+    flex-shrink:0; -webkit-tap-highlight-color:transparent;
+  }
+  .nav-toggle span{
+    display:block; width:22px; height:2px; background:var(--paper); margin:3.5px 0;
+    transition:transform .32s cubic-bezier(.2,.7,.2,1), opacity .25s ease, background .3s ease;
+  }
+  header.nav.solid .nav-toggle span{background:var(--ink);}
+  .nav-toggle.open span:nth-child(1){transform:translateY(9px) rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:translateY(-9px) rotate(-45deg);}
+
+  /* mobile menu drawer */
+  .mobile-menu{
+    position:fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%; z-index:99;
+    background:var(--ink);
+    display:flex; flex-direction:column;
+    padding:104px 32px 40px;
+    transform:translateX(100%);
+    transition:transform .45s cubic-bezier(.2,.7,.2,1);
+    overflow-y:auto;
+    visibility:hidden;
+  }
+  .mobile-menu.open{transform:translateX(0); visibility:visible;}
+  .mobile-menu nav{display:flex; flex-direction:column;}
+  .mobile-menu nav a{
+    font-family:var(--display); font-weight:600; font-size:1.5rem; color:var(--paper);
+    padding:16px 0; border-bottom:1px solid rgba(244,246,241,0.12);
+  }
+  .mobile-menu .btn-primary{margin-top:28px; justify-content:center; width:100%;}
+  .mobile-menu-foot{
+    margin-top:auto; padding-top:34px; display:flex; flex-direction:column; gap:6px;
+    font-family:var(--mono); font-size:.8rem; color:rgba(244,246,241,0.55);
+  }
+  .mobile-menu-foot a{color:rgba(244,246,241,0.8);}
+  body.menu-open{overflow:hidden;}
 
   /* ---------- hero ---------- */
   .hero{
@@ -103,7 +144,7 @@
     overflow:hidden;
   }
   .hero::before{
-    content:'';position:absolute; inset:0;
+    content:'';position:absolute; top:0; left:0; right:0; bottom:0;
     background-image:
       linear-gradient(rgba(244,246,241,0.05) 1px, transparent 1px),
       linear-gradient(90deg, rgba(244,246,241,0.05) 1px, transparent 1px);
@@ -189,9 +230,9 @@
     transition:background .3s ease;
   }
   .manifest-row:hover{background:rgba(255,205,0,0.03);}
-  .manifest-num{font-family:var(--mono); font-size:.85rem; color:var(--gold);}
-  .manifest-name{font-family:var(--display); font-weight:600; font-size:1.15rem;}
-  .manifest-desc{font-size:.92rem; line-height:1.6; color:rgba(244,246,241,0.65);}
+  .manifest-num{font-family:var(--mono); font-size:.85rem; color:var(--gold); grid-area:num;}
+  .manifest-name{font-family:var(--display); font-weight:600; font-size:1.15rem; grid-area:name;}
+  .manifest-desc{font-size:.92rem; line-height:1.6; color:rgba(244,246,241,0.65); grid-area:desc;}
   .manifest-tag{
     font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase;
     color:var(--gold); border:1px solid rgba(255,205,0,0.35); padding:3px 8px; border-radius:2px;
@@ -243,7 +284,7 @@
     margin-bottom:16px;
   }
   .avatar svg{width:44%; height:44%; color:var(--gold); opacity:.85;}
-  .avatar::after{content:''; position:absolute; inset:0; border:1px solid rgba(255,205,0,0.25);}
+  .avatar::after{content:''; position:absolute; top:0; left:0; right:0; bottom:0; border:1px solid rgba(255,205,0,0.25);}
   .team-card h4{font-family:var(--display); font-weight:600; font-size:1.05rem;}
   .team-card .role{font-family:var(--mono); font-size:.72rem; color:var(--green-l); letter-spacing:.05em; margin-top:4px; text-transform:uppercase;}
   .team-card p{font-size:.87rem; color:rgba(244,246,241,0.6); margin-top:10px; line-height:1.55;}
@@ -274,6 +315,28 @@
   form.cform button:hover{background:var(--green);}
   .form-note{font-size:.78rem; color:#8a978f; margin-top:4px;}
 
+  /* ---------- policy ---------- */
+  .policy-list{border-top:1px solid var(--line-dark); margin-top:8px;}
+  .policy-item{border-bottom:1px solid var(--line-dark); padding:6px 0;}
+  .policy-item summary{
+    font-family:var(--display); font-weight:600; font-size:1.1rem;
+    padding:20px 4px; cursor:pointer; list-style:none;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .policy-item summary::-webkit-details-marker{display:none;}
+  .policy-item summary .plus{
+    font-family:var(--mono); font-size:1.2rem; color:var(--green); flex-shrink:0;
+    transition:transform .3s ease;
+  }
+  .policy-item[open] summary .plus{transform:rotate(45deg);}
+  .policy-item .policy-body{padding:0 4px 24px; font-size:.93rem; line-height:1.7; color:#4a5a52; max-width:720px;}
+  .policy-item .policy-body ul{margin:10px 0 0 20px;}
+  .policy-item .policy-body li{margin-bottom:6px;}
+  .policy-disclaimer{
+    margin-top:36px; padding:24px 28px; background:var(--paper-2); border-left:3px solid var(--red);
+    font-size:.86rem; line-height:1.65; color:#4a5a52; max-width:760px;
+  }
+
   /* ---------- footer ---------- */
   footer{background:var(--ink); color:rgba(244,246,241,0.55); padding:44px 0;}
   .footer-inner{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; font-size:.8rem;}
@@ -293,16 +356,33 @@
     .team-grid{grid-template-columns:repeat(2,1fr);}
     .contact-grid{grid-template-columns:1fr; gap:40px;}
     nav.links{display:none;}
+    .nav-cta{display:none;}
+    .nav-toggle{display:flex;}
     .manifest-row{grid-template-columns:44px 1fr; grid-template-areas:"num name" "desc desc";}
     .manifest-desc{grid-area:desc; margin-top:6px;}
   }
   @media (max-width: 600px){
     .wrap{padding:0 20px;}
-    section{padding:80px 0;}
+    section{padding:72px 0;}
     .cat-grid{grid-template-columns:1fr;}
     .team-grid{grid-template-columns:1fr 1fr;}
     .industry-item{flex:1 1 100%; border-right:none; border-bottom:1px solid var(--line-dark);}
+    .hero{min-height:auto; padding-top:96px; padding-bottom:56px;}
+    .hero-cta{flex-direction:column; align-items:stretch;}
+    .hero-cta .btn{justify-content:center;}
+    .hero-stats{gap:22px;}
+    .hero-stats div{padding-left:12px;}
+    .route-box{height:260px;}
+    .mobile-menu{padding:92px 24px 32px;}
+    .mobile-menu nav a{font-size:1.28rem; padding:14px 0;}
+    .policy-item summary{font-size:1rem;}
   }
+  @media (max-width: 420px){
+    .team-grid{grid-template-columns:1fr;}
+    .brand-sub{color:var(--gold);}
+  }
+  /* prevent iOS zoom-on-focus for form fields */
+  form.cform input, form.cform textarea{font-size:16px;}
 </style>
 </head>
 <body>
@@ -311,14 +391,13 @@
 <header class="nav" id="siteNav">
   <div class="wrap nav-inner">
     <a href="#top" class="brand">
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M24 4C14 10 6 20 6 30c8-2 14 2 18 8 4-6 10-10 18-8 0-10-8-20-18-26Z" fill="#046a38"/>
-        <path d="M24 46C16 42 9 33 9 26c7 4 14 2 19-4 3 8 2 17-4 24Z" fill="#c8102e"/>
-        <circle cx="26" cy="18" r="5.5" fill="#ffcd00" opacity=".92"/>
-      </svg>
+      <img src="{{asset('f')}}/img/logo_shopno_international.jpg" alt="Shopno International" width="34" height="34" loading="lazy" style="border-radius: 4px;">
       <span>
-        <span class="brand-name">Shopno International</span>
-        <span class="brand-sub">Dhaka · Guangzhou</span>
+        <span class="brand-name">Shopno International
+          <br />
+          <span class="brand-sub">Dhaka · Guangzhou</span>
+        </span>
+        
       </span>
     </a>
     <nav class="links">
@@ -327,10 +406,31 @@
       <a href="#projects">What We Move</a>
       <a href="#trusted">Trusted By</a>
       <a href="#team">Team</a>
+      <a href="#policy">Policies</a>
     </nav>
     <a href="#contact" class="nav-cta">Get In Touch</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav>
+    <a href="#why">Why Us</a>
+    <a href="#services">Services</a>
+    <a href="#projects">What We Move</a>
+    <a href="#trusted">Trusted By</a>
+    <a href="#team">Team</a>
+    <a href="#policy">Policies</a>
+  </nav>
+  <a href="#contact" class="btn btn-primary">Get In Touch</a>
+  <div class="mobile-menu-foot">
+    <span>+880 1319 885758</span>
+    <a href="mailto:shopnointernationalinfo@gmail.com">shopnointernationalinfo@gmail.com</a>
+  </div>
+</div>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
@@ -415,52 +515,52 @@
       <div class="manifest-row">
         <div class="manifest-num">01</div>
         <div class="manifest-name">Sourcing</div>
-        <div><div class="manifest-desc">Finding and vetting the right product and factory in China at the lowest honest cost.</div></div>
+        <div class="manifest-desc">Finding and vetting the right product and factory in China at the lowest honest cost.</div>
       </div>
       <div class="manifest-row">
         <div class="manifest-num">02</div>
         <div class="manifest-name">Price Negotiation</div>
-        <div><div class="manifest-desc">We negotiate supplier pricing on your behalf, using local market knowledge as leverage.</div></div>
+        <div class="manifest-desc">We negotiate supplier pricing on your behalf, using local market knowledge as leverage.</div>
       </div>
       <div class="manifest-row">
         <div class="manifest-num">03</div>
         <div class="manifest-name">China Agent Facility</div>
-        <div><div class="manifest-desc">A dedicated on-ground representative to inspect goods and manage the supplier relationship.</div></div>
+        <div class="manifest-desc">A dedicated on-ground representative to inspect goods and manage the supplier relationship.</div>
       </div>
       <div class="manifest-row">
         <div class="manifest-num">04</div>
         <div class="manifest-name">Translation</div>
-        <div><div class="manifest-desc">Mandarin ↔ Bengali/English translation across calls, contracts and factory visits.</div></div>
+        <div class="manifest-desc">Mandarin ↔ Bengali/English translation across calls, contracts and factory visits.</div>
       </div>
       <div class="manifest-row">
         <div class="manifest-num">05</div>
         <div class="manifest-name">Payment &amp; LC Receiving</div>
-        <div><div class="manifest-desc">Secure payment facility with letter of credit receiving support for larger orders.</div></div>
+        <div class="manifest-desc">Secure payment facility with letter of credit receiving support for larger orders.</div>
       </div>
       <div class="manifest-row">
         <div class="manifest-num">06</div>
         <div class="manifest-name">China Warehouse Facility</div>
-        <div><div class="manifest-desc">Consolidate goods from multiple suppliers under one roof before they ship out.</div></div>
+        <div class="manifest-desc">Consolidate goods from multiple suppliers under one roof before they ship out.</div>
       </div>
       <div class="manifest-row">
         <div class="manifest-num">07</div>
         <div class="manifest-name">FCL / LCL / Mixed Loading</div>
-        <div><div class="manifest-desc">Full, partial or mixed-container loading, planned to fit your order size and budget.</div></div>
+        <div class="manifest-desc">Full, partial or mixed-container loading, planned to fit your order size and budget.</div>
       </div>
       <div class="manifest-row">
         <div class="manifest-num">08</div>
         <div class="manifest-name">Door to Door (Air &amp; Sea)</div>
-        <div><div class="manifest-desc">From the Chinese factory to your address in Bangladesh, by the fastest sensible route.</div></div>
+        <div class="manifest-desc">From the Chinese factory to your address in Bangladesh, by the fastest sensible route.</div>
       </div>
       <div class="manifest-row">
         <div class="manifest-num">09</div>
         <div class="manifest-name">Invitation Letter &amp; Visa Support</div>
-        <div><div class="manifest-desc">Documentation support if you'd rather see the factory floor yourself.</div></div>
+        <div class="manifest-desc">Documentation support if you'd rather see the factory floor yourself.</div>
       </div>
       <div class="manifest-row">
         <div class="manifest-num">10</div>
         <div class="manifest-name">Foreign Currency Investment</div>
-        <div><div class="manifest-desc">Guidance on structuring foreign currency for cross-border trade.</div></div>
+        <div class="manifest-desc">Guidance on structuring foreign currency for cross-border trade.</div>
       </div>
     </div>
   </div>
@@ -582,6 +682,64 @@
   </div>
 </section>
 
+<!-- ============ POLICIES ============ -->
+<section id="policy">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow eyebrow-dark">Policies</div>
+      <h2>How we handle orders, payment and your data.</h2>
+      <p>The short version of how we operate. Ask us directly for the full terms before placing a large order.</p>
+    </div>
+
+    <div class="policy-list reveal">
+      <details class="policy-item">
+        <summary>Shipping &amp; Delivery <span class="plus">+</span></summary>
+        <div class="policy-body">
+          <p>Goods move by air or sea depending on your order's size, budget and urgency. Air freight is faster and suits smaller or time-sensitive orders; sea freight suits larger volumes at a lower cost per unit. Exact timelines depend on the supplier, port schedules and customs clearance, so we confirm a delivery window with you before your order ships — not after.</p>
+          <ul>
+            <li>Door to door delivery from the China supplier to your address in Bangladesh</li>
+            <li>FCL, LCL and mixed-container loading available depending on order volume</li>
+            <li>You'll get tracking updates at each major stage: loading, departure, port arrival, customs</li>
+          </ul>
+        </div>
+      </details>
+      <details class="policy-item">
+        <summary>Payment &amp; LC Terms <span class="plus">+</span></summary>
+        <div class="policy-body">
+          <p>Most orders require a partial advance payment to confirm production, with the balance due before or on shipment — the exact split depends on the supplier and order size. We support letter of credit (LC) receiving for larger or first-time orders, and can advise on structuring foreign currency payments in line with standard trade practice.</p>
+          <ul>
+            <li>Advance + balance payment structure, agreed per order</li>
+            <li>LC receiving facility available on request</li>
+            <li>All payment terms confirmed in writing before production begins</li>
+          </ul>
+        </div>
+      </details>
+      <details class="policy-item">
+        <summary>Quality &amp; Claims <span class="plus">+</span></summary>
+        <div class="policy-body">
+          <p>Our China agent inspects goods before they leave the warehouse. If something arrives damaged or doesn't match the agreed sample, tell us as soon as you receive the shipment — the sooner we hear from you, the more we can do with the supplier on your behalf.</p>
+          <ul>
+            <li>Pre-shipment inspection by our on-ground agent</li>
+            <li>Report discrepancies with photos within a few days of delivery</li>
+            <li>We mediate directly with the supplier on valid claims</li>
+          </ul>
+        </div>
+      </details>
+      <details class="policy-item">
+        <summary>Privacy <span class="plus">+</span></summary>
+        <div class="policy-body">
+          <p>We only use the details you share — name, phone, order specifics — to process your inquiry and manage your shipment. We don't sell or hand off your information to marketers. It's shared only with the parties needed to move your goods, such as the supplier, shipping line and customs agents.</p>
+          <ul>
+            <li>Your data is used for order fulfilment only</li>
+            <li>Shared only with logistics and customs parties involved in your shipment</li>
+            <li>Email us anytime to ask what we hold on you or to have it removed</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CONTACT ============ -->
 <section id="contact">
   <div class="wrap">
@@ -631,7 +789,7 @@
   <div class="wrap footer-inner">
     <div class="brand-name">Shopno International</div>
     <div>Dhaka, Bangladesh · Guangzhou, China</div>
-    <div>&copy; 2026 Shopno International. All rights reserved.</div>
+    <div><a href="#policy">Policies</a> · &copy; 2026 Shopno International. All rights reserved.</div>
   </div>
 </footer>
 
@@ -640,6 +798,34 @@
   const nav = document.getElementById('siteNav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('solid', window.scrollY > 40);
+  });
+
+  // mobile menu toggle
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function closeMenu(){
+    mobileMenu.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open menu');
+    document.body.classList.remove('menu-open');
+  }
+  function openMenu(){
+    mobileMenu.classList.add('open');
+    navToggle.classList.add('open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.setAttribute('aria-label', 'Close menu');
+    document.body.classList.add('menu-open');
+  }
+  navToggle.addEventListener('click', () => {
+    mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  window.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') closeMenu();
+  });
+  window.addEventListener('resize', () => {
+    if(window.innerWidth > 980) closeMenu();
   });
 
   // scroll reveal
