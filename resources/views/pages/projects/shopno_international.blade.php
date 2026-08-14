@@ -225,7 +225,7 @@
   /* ---------- services / manifest ---------- */
   .manifest{border-top:1px solid var(--line);}
   .manifest-row{
-    display:grid; grid-template-columns:70px 1.3fr 1.7fr; gap:24px; align-items:center;
+    display:grid; grid-template-columns:70px 1.3fr 1.7fr; gap:24px; align-items:center; grid-template-areas:"num name desc";
     padding:26px 0; border-bottom:1px solid var(--line);
     transition:background .3s ease;
   }
@@ -632,15 +632,6 @@
       <div class="industry-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg><span>Garment &amp; Textile</span></div>
       <div class="industry-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg><span>Electronics Retail</span></div>
       <div class="industry-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>E-commerce Sellers</span></div>
-    </div>
-
-    <div class="flag-note reveal">
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 4C14 10 6 20 6 30c8-2 14 2 18 8 4-6 10-10 18-8 0-10-8-20-18-26Z" fill="#046a38"/>
-        <path d="M24 46C16 42 9 33 9 26c7 4 14 2 19-4 3 8 2 17-4 24Z" fill="#c8102e"/>
-        <circle cx="26" cy="18" r="5.5" fill="#ffcd00" opacity=".92"/>
-      </svg>
-      <p><b>New here?</b> This spot is reserved for the logos of the clients you'd like to feature. Swap this note out for a row of client marks once you've got a few shipments you're proud to show off — first impressions in a portfolio carry more weight than a promise.</p>
     </div>
   </div>
 </section>
