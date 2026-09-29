@@ -11,9 +11,9 @@
 					</div>
 				</div>
 
-				<div class="row gx-3 gy-2">
+				<div class="row g-4">
 					@foreach ($services as $service)
-					<div class="col-lg-4 col-md-6 col-12 border">
+					<div class="col-lg-4 col-12 border rounded-3 shadow">
 						<!-- Start Single Service -->
 						<div class="single-service ">
 							<h4><a href="">{{ $service->title }}</a></h4>

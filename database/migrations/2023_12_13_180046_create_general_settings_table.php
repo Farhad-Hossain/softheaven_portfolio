@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('sub_title_message', 150);
             $table->string('promo_video_link');
             $table->string('trusted_clients_count');
-            $table->unsignedFloat('rating')->default(0);
+            $table->decimal('rating',3,2)->default(0);
             $table->string('address', 300);
             $table->string('contact_no_1',14);
             $table->string('contact_no_2',14);

@@ -1,78 +1,120 @@
-<!-- Start Appointment -->
+<!-- Start Contact -->
 <section class="appointment" id="contact">
     <div class="container">
+
+        {{-- Section Title --}}
         <div class="row">
             <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>We Are Always Ready to Help You. Book An Appointment</h2>
-                    <img src="{{asset('f')}}/img/section-img.png" alt="#">
-                    <p>Our team of expert developers and engineers is committed to delivering high-quality, customized software to meet your unique needs.</p>
+                <div class="section-title-clean">
+                    <span class="label-tag">Get In Touch</span>
+                    <h2>Let's Work Together</h2>
+                    <p>Have a project in mind or want to discuss an opportunity? I'd love to hear from you.</p>
                 </div>
             </div>
         </div>
-        <div class="row">
+
+        <div class="row g-5 align-items-start mt-2">
+
+            {{-- LEFT: Contact Info Cards --}}
             <div class="col-lg-6 col-md-12 col-12">
-                <form class="form" action="#">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <input name="name" type="text" placeholder="Name">
-                            </div>
+                <div class="contact-info-panel">
+
+                    <p class="contact-intro">
+                        I'm available for freelance projects, full-time roles, and technical collaborations.
+                        Feel free to reach out through any of the channels below — I typically respond within 24 hours.
+                    </p>
+
+                    <div class="contact-info-card">
+                        <div class="ci-icon">
+                            <i class="fa fa-phone"></i>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <input name="email" type="email" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <input name="phone" type="text" placeholder="Phone">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12">
-                            <div class="form-group">
-                                <div class="nice-select form-control wide" tabindex="0"><span class="current">Asking Area</span>
-                                    <ul class="list">
-                                        <li data-value="0" class="option selected ">------</li>
-                                        <li data-value="2" class="option">Web Development & Design</li>
-                                        <li data-value="3" class="option">ERP Solution</li>
-                                        <li data-value="4" class="option">Mobile App Development</li>
-                                        <li data-value="5" class="option">Digital Marketing</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <input type="text" placeholder="Date" id="datepicker">
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="form-group">
-                                <textarea name="message" placeholder="Write Your Message Here....."></textarea>
-                            </div>
+                        <div class="ci-body">
+                            <span class="ci-label">Mobile</span>
+                            <a href="tel:+8801730622454" class="ci-value">+880 1730 622 454</a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-5 col-md-4 col-12">
-                            <div class="form-group">
-                                <div class="button">
-                                    <button type="submit" class="btn">Book An Appointment</button>
-                                </div>
-                            </div>
+
+                    <div class="contact-info-card">
+                        <div class="ci-icon">
+                            <i class="fa fa-envelope"></i>
                         </div>
-                        <div class="col-lg-7 col-md-8 col-12">
-                            <p>( We will be confirm by an Text Message )</p>
+                        <div class="ci-body">
+                            <span class="ci-label">Email Address</span>
+                            <a href="mailto:farhad.cse33@gmail.com" class="ci-value">farhad.cse33@gmail.com</a>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="col-lg-6 col-md-12 ">
-                <div class="appointment-image">
-                    <img src="{{asset('f')}}/img/contact-img.png" alt="#">
+
+                    <div class="contact-info-card">
+                        <div class="ci-icon">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <div class="ci-body">
+                            <span class="ci-label">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/farhad-cse/" target="_blank" class="ci-value">farhad-cse</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-availability">
+                        <span class="availability-dot"></span>
+                        Available for new projects &amp; opportunities
+                    </div>
+
                 </div>
             </div>
+
+
+            {{-- RIGHT: Contact Form --}}
+            <div class="col-lg-6 col-md-12 col-12">
+                <div class="contact-form-wrap">
+                    <form class="form" action="#">
+                        <div class="row g-3">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <input name="name" type="text" placeholder="Your Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <input name="email" type="email" placeholder="Your Email">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <input name="phone" type="text" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <div class="form-group">
+                                    <div class="nice-select form-control wide" tabindex="0">
+                                        <span class="current">Topic</span>
+                                        <ul class="list">
+                                            <li data-value="0" class="option selected">------</li>
+                                            <li data-value="2" class="option">Web Development &amp; Design</li>
+                                            <li data-value="3" class="option">ERP Solution</li>
+                                            <li data-value="4" class="option">Mobile App Development</li>
+                                            <li data-value="5" class="option">Digital Marketing</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="button">
+                                    <button type="submit" class="btn">Send Message <i class="fa fa-paper-plane" style="margin-left:8px;"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            
+
         </div>
     </div>
 </section>
-<!-- End Appointment -->
+<!-- End Contact -->
