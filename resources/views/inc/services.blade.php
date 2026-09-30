@@ -13,7 +13,7 @@
 
 				<div class="row">
 					@foreach ($services as $service)
-					<div class="col-lg-4 col-12 border rounded-3 shadow my-2 mx-2">
+					<div class="col-lg-4 col-12 border rounded-3 shadow my-2">
 						<!-- Start Single Service -->
 						<div class="single-service ">
 							<h4><a href="">{{ $service->title }}</a></h4>
