@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="{{asset('f')}}/css/animate.min.css">
         <link rel="stylesheet" href="{{asset('f')}}/css/magnific-popup.css">
         <link rel="stylesheet" href="{{asset('f')}}/css/normalize.css">
-        <link rel="stylesheet" href="{{asset('f')}}/style.css">
+        <link rel="stylesheet" href="{{asset('f')}}/styles.css">
         <link rel="stylesheet" href="{{asset('f')}}/css/responsive.css">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 		<style>
