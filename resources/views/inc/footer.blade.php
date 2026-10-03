@@ -7,14 +7,12 @@
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
 								<h2>About Us</h2>
-								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p>
+								<p>Team Farhad is a web development company based in Bangladesh. We provide a wide range of web development services to businesses of all sizes. Our team of experienced developers is passionate about creating high-quality web applications that help businesses achieve their goals.</p>
 								<!-- Social -->
 								<ul class="social">
 									<li><a href="#"><i class="icofont-facebook"></i></a></li>
-									<li><a href="#"><i class="icofont-google-plus"></i></a></li>
-									<li><a href="#"><i class="icofont-twitter"></i></a></li>
-									<li><a href="#"><i class="icofont-vimeo"></i></a></li>
-									<li><a href="#"><i class="icofont-pinterest"></i></a></li>
+									<li><a href="#"><i class="icofont-linkedin"></i></a></li>
+									<li><a href="#"><i class="icofont-github"></i></a></li>
 								</ul>
 								<!-- End Social -->
 							</div>
@@ -25,11 +23,11 @@
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-12">
 										<ul>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
-											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>	
+											<li><a href="#home"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
+											<li><a href="#about"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
+											<li><a href="#services"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
+											<li><a href="#projects"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
+											<li><a href="#contact"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>	
 										</ul>
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
