@@ -78,9 +78,9 @@
 <div class="modal fade" id="cashEntryModal" tabindex="-1" role="dialog" aria-labelledby="cashEntryModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="cashEntryModalLabel">Cash Entry</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-header my-0">
+                <h5 class="modal-title my-0" id="cashEntryModalLabel">Cash Entry</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-bs-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -89,59 +89,62 @@
                     @csrf
                     <input type="hidden" name="cash_entry_type_id" id="id_cash_entry_type_id" value="">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-sm-6 form-group">
+                            <label for="entry_date">Date <span class="text-danger">*</span></label>
+                            <input type="date" class="form-control" id="entry_date" name="entry_date" value="{{ date('Y-m-d') }}" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="entry_time">Time <span class="text-danger">*</span></label>
+                            <input type="time" class="form-control" id="entry_time" name="entry_time" value="{{ date('H:i') }}" required>
+                        </div>
+                    
+                        <div class="col-sm-12 d-none">
                             <div class="form-group">
-                                <label for="entry_date">Entry Date <span class="text-danger">*</span></label>
-                                <input type="date" class="form-control" id="entry_date" name="entry_date" value="{{ date('Y-m-d') }}" required>
+                                <label for="id_cashbook">Cashbook</label>
+                                <input type="text" class="form-control" id="id_cashbook" name="book_id" value="{{ $book->id }}" required>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="entry_time">Entry Time <span class="text-danger">*</span></label>
-                                <input type="time" class="form-control" id="entry_time" name="entry_time" value="{{ date('H:i') }}" required>
-                            </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="amount">Amount <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="amount" min="1" step="0.01" name="amount" required>
                         </div>
-                    </div>
-                    <div class="form-group d-none">
-                        <label for="id_cashbook">Cashbook</label>
-                        <input type="text" class="form-control" id="id_cashbook" name="book_id" value="{{ $book->id }}" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="amount">Amount <span class="text-danger">*</span></label>
-                        <input type="number" class="form-control" id="amount" min="1" step="0.01" name="amount" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="remarks">Remarks <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" id="remarks" name="remarks" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="payment_mode">Payment Mode <span class="text-danger">*</span></label>
-                        <select class="form-control" id="payment_mode" name="payment_mode_id" required>
-                            <option value="">---------</option>
-                            @foreach ($paymentModes as $paymentMode)
-                                <option value="{{ $paymentMode->id }}" {{ $paymentMode->name == 'Cash' ? 'selected' : '' }}>{{ $paymentMode->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="id_category">Categories <span class="text-danger">*</span></label>
-                        <select class="form-control" id="id_category" name="category_id" required>
-                            <option value="">---------</option>
-                            @foreach ($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_person">Contact Person</label>
-                        <input type="text" class="form-control" id="contact_person" name="contact_person">
+                        
+                        <div class="col-sm-6 form-group">
+                            <label for="payment_mode">Payment Mode <span class="text-danger">*</span></label>
+                            <select class="form-control" id="payment_mode" name="payment_mode_id" required>
+                                <option value="">---------</option>
+                                @foreach ($paymentModes as $paymentMode)
+                                    <option value="{{ $paymentMode->id }}" {{ $paymentMode->name == 'Cash' ? 'selected' : '' }}>{{ $paymentMode->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="col-sm-12 form-group">
+                            <label for="remarks">Remarks <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="remarks" name="remarks" required>
+                        </div>
+                        
+                        <div class="col-sm-12 form-group">
+                            <label for="id_category">Category <span class="text-danger">*</span></label>
+                            <select class="form-control" id="id_category" name="category_id" required>
+                                <option value="">---------</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact_person">Contact Person</label>
+                            <input type="text" class="form-control" id="contact_person" name="contact_person">
+                        </div>
                     </div>
                 </div>
+
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-bs-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-primary">Save Entry</button>
                 </div>
-        </form>
+            </form>
         </div>
     </div>
 </div>
