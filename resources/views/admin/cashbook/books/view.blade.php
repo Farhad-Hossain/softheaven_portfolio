@@ -17,13 +17,13 @@
         
         <div class="d-flex justify-content-between mb-3">
             <div class="h6">
-                <span class="text-success">Total Cash In</span>: {{ intval($total_cash_in) }}
+                <span class="text-success">Total Cash In</span>: {{ number_format(intval($total_cash_in), 0, '.', ',') }}
                 <br />
-                <span class="text-danger">Total Cash Out</span>: {{ intval($total_cash_out) }}
+                <span class="text-danger">Total Cash Out</span>: {{ number_format(intval($total_cash_out), 0, '.', ',') }}
             </div>
             <div style="text-align: right;" class="h6">
                 <span class="text-{{ strtolower($final_cash >= 0 ? 'success' : 'danger') }}">Final Cash</span>: 
-                <span class="text-{{ strtolower($final_cash >= 0 ? 'success' : 'danger') }}">{{ intval($final_cash) }}</span>
+                <span class="text-{{ strtolower($final_cash >= 0 ? 'success' : 'danger') }}">{{ number_format(intval($final_cash), 0, '.', ',') }}</span>
             </div>
         </div>
 
@@ -31,7 +31,7 @@
             <table class="table table-bordered table-hover" id="cashbook-books-table">
                 <thead>
                     <tr>
-                        <th>Date & Time</th>
+                        <th>Date/Time</th>
                         <th style="text-align: right;">Amount</th>
                     <th>Category</th>
                     <th>Actions</th>
@@ -46,33 +46,29 @@
                         <span class="text-muted">{{ date('h:i A', strtotime($entry->entry_time)) }}</span>
                     </td>
                     <td class="h6 text-{{ strtolower($entry->cash_entry_type->name) == 'cash in' ? 'success' : 'danger' }}" style="text-align: right;">
-                        {{ intval($entry->amount) }}
-                        <br />
                         <span class="text-muted">{{ $entry->cash_payment_mode->name }}</span>
+                        <br>
+                        {{ intval($entry->amount) }}
                     </td>
                     <td>
-                        - {{ $entry->cash_entry_category->name }} -
-                        <br />
+                        <span class="text-muted">- {{ $entry->cash_entry_category->name }} -</span>
+                        <br>
                         {{ $entry->remarks }}
                     </td>
                     <td>
-                        <a href="{{route('admin.cashbook.books.edit', $book->id)}}" class="btn btn-primary btn-sm">
+                        <div class="text-right" style="display: flex; justify-content: end; gap: 5px;">
+                        <a href="{{route('admin.cashbook.entries.edit', $entry->id)}}" class="btn btn-primary btn-sm">
                             <i class="fa fa-edit"></i>
-                        </a>
-                        <a href="{{route('admin.cashbook.books.delete', $book->id)}}" class="btn btn-danger btn-sm btn-delete-cashbook">
+                        </a> 
+                        <a href="{{route('admin.cashbook.entries.delete', $entry->id)}}" class="btn btn-danger btn-sm btn-delete-entry">
                             <i class="fa fa-trash"></i>
                         </a>
+                        </div>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
             <tfoot>
-                <tr class="bg-info h6">
-                    <td>Total</td>
-                    <td style="text-align: right;" class="h6 text-{{ strtolower($final_cash >= 0 ? 'success' : 'danger') }}">{{ intval($final_cash) }}</td>
-                    <td></td>
-                    <td></td>
-                </tr>
             </tfoot>
         </table>
         </div>

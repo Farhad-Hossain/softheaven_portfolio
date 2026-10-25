@@ -106,6 +106,9 @@ Route::group(['prefix'=>'cashbook', 'as'=>'cashbook.', 'namespace'=>'Admin'], fu
   Route::match(['GET', 'POST'], '/entries/edit/{id}', [CashbookController::class, 'editEntry'])
     ->name('entries.edit');
 
+  Route::match(['GET', 'POST'], '/entries/delete/{id}', [CashbookController::class, 'deleteEntry'])
+    ->name('entries.delete');
+
   Route::get('/categories', [CashbookController::class, 'getCategories'])
     ->name('categories');
 

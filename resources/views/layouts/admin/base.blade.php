@@ -24,6 +24,7 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     @include('layouts.admin.aside')
     <main class="app-content">
+      <!-- 
       <div class="app-title">
         <div>
           <p><i class="bi bi-speedometer"></i> Blank Page</p>
@@ -34,6 +35,7 @@
           <li class="breadcrumb-item"><a href="#">Blank Page</a></li>
         </ul>
       </div>
+       -->
 
       <div class="row">
         <div class="col-md-12">

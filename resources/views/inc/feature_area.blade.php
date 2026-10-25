@@ -11,8 +11,7 @@
                         <h4>Amazing Application Features</h4>
                         <h2>Enhance Your App Experience with Smart Features</h2>
                         <p>
-                            Discover seamless navigation and cutting-edge functionalities with
-                            SoftHeaven's intuitive application features. Each detail is crafted for excellence,
+                            Discover seamless navigation and cutting-edge functionalities. Each detail is crafted for excellence,
                             ensuring a sophisticated and enjoyable user experience.
                         </p>
                         <a class="btn btn-md btn-gradient">See More <i class="fas fa-angle-right"></i></a>
