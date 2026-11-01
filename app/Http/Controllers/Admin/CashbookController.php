@@ -47,25 +47,49 @@ class CashbookController extends Controller
     public function viewBook(Request $request, $book_id) {
         $book = CashBook::find($book_id);
 
-        $entries = CashEntry::where('book_id', $book_id);
-        $payment_type = $request->  payment_type ?? "all";
+        $query = CashEntry::where('book_id', $book_id);
 
-        // if ( $payment_type == 'cash_in' ) {
-        //     $entries = $entries->where('cash_entry_type_id', 1);
-        // } elseif ( $payment_type == 'cash_out' ) {
-        //     $entries = $entries->where('cash_entry_type_id', 2);
-        // }
+        // Filter: Entry Type
+        if ($request->filled('entry_type_id')) {
+            $query->where('cash_entry_type_id', $request->entry_type_id);
+        }
 
-        $entries = $entries->latest()->get();
+        // Filter: Contact
+        if ($request->filled('contact_id')) {
+            $query->where('contact_id', $request->contact_id);
+        }
+
+        // Filter: Date Range
+        if ($request->filled('date_from')) {
+            $query->whereDate('entry_date', '>=', $request->date_from);
+        }
+        if ($request->filled('date_to')) {
+            $query->whereDate('entry_date', '<=', $request->date_to);
+        }
+
+        // Filter: Amount Range
+        if ($request->filled('amount_min')) {
+            $query->where('amount', '>=', $request->amount_min);
+        }
+        if ($request->filled('amount_max')) {
+            $query->where('amount', '<=', $request->amount_max);
+        }
+
+        $entries = $query->latest('entry_date')->latest('entry_time')->get();
+
+        // Totals based on filtered entries
+        $total_cash_in  = $query->clone()->where('cash_entry_type_id', 1)->sum('amount');
+        $total_cash_out = $query->clone()->where('cash_entry_type_id', 2)->sum('amount');
+        $final_cash     = $total_cash_in - $total_cash_out;
+
         $paymentModes = CashPaymentMode::all();
-        $categories = CashEntryCategory::all();
-        $entryTypes = CashEntryType::all();
+        $categories   = CashEntryCategory::all();
+        $entryTypes   = CashEntryType::all();
+        $contacts     = CashContact::all();
 
-        $total_cash_in = CashEntry::where('book_id', $book_id)->where('cash_entry_type_id', 1)->sum('amount');
-        $total_cash_out = CashEntry::where('book_id', $book_id)->where('cash_entry_type_id', 2)->sum('amount');
-        $final_cash = $total_cash_in - $total_cash_out;
-
-        $contacts = CashContact::all();
+        // Pass active filters back for repopulating the form
+        $filters = $request->only(['entry_type_id', 'contact_id', 'date_from', 'date_to', 'amount_min', 'amount_max']);
+        $hasActiveFilters = collect($filters)->filter()->isNotEmpty();
 
         return view('admin.cashbook.books.view', compact(
             'book',
@@ -76,7 +100,9 @@ class CashbookController extends Controller
             'entryTypes',
             'total_cash_in',
             'total_cash_out',
-            'final_cash'
+            'final_cash',
+            'filters',
+            'hasActiveFilters'
         ));
     }
 
