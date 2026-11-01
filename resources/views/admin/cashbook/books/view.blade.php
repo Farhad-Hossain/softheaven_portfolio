@@ -7,33 +7,31 @@
     </div>
 
     <div class="card-body">
-        @foreach($entryTypes as $entryType)
-            <button class="btn btn-sm btn-{{ strtolower($entryType->name) == 'cash in' ? 'success' : 'danger' }}" 
-                onclick="raiseCashEntryModal('{{ $entryType->id }}', '{{ $entryType->name }}')"
-                >{{ $entryType->name }}</button> &nbsp;&nbsp;
-        @endforeach
-        <br />
-        <br />
+        <div class="d-flex justify-content-between mb-4">
+            @foreach($entryTypes as $entryType)
+                <button class="btn btn-sm btn-{{ strtolower($entryType->name) == 'cash in' ? 'success' : 'danger' }}" 
+                    onclick="raiseCashEntryModal('{{ $entryType->id }}', '{{ $entryType->name }}')"
+                    >{{ $entryType->name }}</button> &nbsp;
+            @endforeach
+            <button class="btn btn-sm btn-outline-secondary" type="button" 
+                    data-toggle="collapse" data-target="#filterPanel" 
+                    data-bs-toggle="collapse" data-bs-target="#filterPanel"
+                    aria-expanded="{{ $hasActiveFilters ? 'true' : 'false' }}" 
+                    aria-controls="filterPanel" id="filterToggleBtn">
+                <i class="fa fa-filter"></i>
+                @if($hasActiveFilters)
+                    <span class="badge badge-primary ml-1" style="background:#4e73df;">Active</span>
+                @endif
+            </button> &nbsp;
+            @if($hasActiveFilters)
+                <a href="{{ route('admin.cashbook.book.view', $book->id) }}" class="btn btn-sm btn-outline-danger">
+                    <i class="fa fa-times"></i> Clear 
+                </a>
+            @endif
+        </div>
 
         {{-- ===== FILTER PANEL ===== --}}
         <div class="mb-3">
-            <div class="d-flex align-items-center mb-2" style="gap:10px;">
-                <button class="btn btn-sm btn-outline-secondary" type="button" 
-                        data-toggle="collapse" data-target="#filterPanel" 
-                        data-bs-toggle="collapse" data-bs-target="#filterPanel"
-                        aria-expanded="{{ $hasActiveFilters ? 'true' : 'false' }}" 
-                        aria-controls="filterPanel" id="filterToggleBtn">
-                    <i class="fa fa-filter"></i> Filter
-                    @if($hasActiveFilters)
-                        <span class="badge badge-primary ml-1" style="background:#4e73df;">Active</span>
-                    @endif
-                </button>
-                @if($hasActiveFilters)
-                    <a href="{{ route('admin.cashbook.book.view', $book->id) }}" class="btn btn-sm btn-outline-danger">
-                        <i class="fa fa-times"></i> Clear Filters
-                    </a>
-                @endif
-            </div>
 
             <div class="collapse {{ $hasActiveFilters ? 'show' : '' }}" id="filterPanel">
                 <div class="card card-body py-3 mb-3" style="background:#f8f9fc; border:1px solid #e3e6f0;">
@@ -64,6 +62,9 @@
                                     @endforeach
                                 </select>
                             </div>
+                        </div>
+
+                        <div class="row">
 
                             {{-- Date From --}}
                             <div class="col-sm-6 col-md-3 form-group mb-2">
