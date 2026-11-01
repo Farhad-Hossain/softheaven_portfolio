@@ -7,7 +7,7 @@
     </div>
 
     <div class="card-body">
-        <div class="d-flex justify-content-between mb-4">
+        <div class="d-flex justify-content-among mb-2">
             @foreach($entryTypes as $entryType)
                 <button class="btn btn-sm btn-{{ strtolower($entryType->name) == 'cash in' ? 'success' : 'danger' }}" 
                     onclick="raiseCashEntryModal('{{ $entryType->id }}', '{{ $entryType->name }}')"
@@ -18,7 +18,7 @@
                     data-bs-toggle="collapse" data-bs-target="#filterPanel"
                     aria-expanded="{{ $hasActiveFilters ? 'true' : 'false' }}" 
                     aria-controls="filterPanel" id="filterToggleBtn">
-                <i class="fa fa-filter"></i>
+                <i class="fa fa-filter"></i>Filter
                 @if($hasActiveFilters)
                     <span class="badge badge-primary ml-1" style="background:#4e73df;">Active</span>
                 @endif
@@ -31,17 +31,15 @@
         </div>
 
         {{-- ===== FILTER PANEL ===== --}}
-        <div class="mb-3">
-
             <div class="collapse {{ $hasActiveFilters ? 'show' : '' }}" id="filterPanel">
-                <div class="card card-body py-3 mb-3" style="background:#f8f9fc; border:1px solid #e3e6f0;">
+                <div class="card card-body mb-2 py-1" style="background:#f8f9fc; border:1px solid #e3e6f0;">
                     <form method="GET" action="{{ route('admin.cashbook.book.view', $book->id) }}" id="filterForm">
                         <div class="row">
                             {{-- Entry Type --}}
-                            <div class="col-sm-6 col-md-3 form-group mb-2">
+                            <div class="col-4 col-md-3 form-group mb-1 px-1">
                                 <label class="small font-weight-bold mb-1" for="filter_entry_type">Entry Type</label>
                                 <select class="form-control form-control-sm" id="filter_entry_type" name="entry_type_id">
-                                    <option value="">-- All Types --</option>
+                                    <option value="">------</option>
                                     @foreach($entryTypes as $et)
                                         <option value="{{ $et->id }}" {{ isset($filters['entry_type_id']) && $filters['entry_type_id'] == $et->id ? 'selected' : '' }}>
                                             {{ $et->name }}
@@ -51,10 +49,10 @@
                             </div>
 
                             {{-- Contact --}}
-                            <div class="col-sm-6 col-md-3 form-group mb-2">
+                            <div class="col-8 col-md-3 form-group mb-1 px-1">
                                 <label class="small font-weight-bold mb-1" for="filter_contact">Contact</label>
                                 <select class="form-control form-control-sm" id="filter_contact" name="contact_id">
-                                    <option value="">-- All Contacts --</option>
+                                    <option value="">------</option>
                                     @foreach($contacts as $c)
                                         <option value="{{ $c->id }}" {{ isset($filters['contact_id']) && $filters['contact_id'] == $c->id ? 'selected' : '' }}>
                                             {{ $c->name }}{{ $c->phone ? ' - '.$c->phone : '' }}
@@ -67,21 +65,21 @@
                         <div class="row">
 
                             {{-- Date From --}}
-                            <div class="col-sm-6 col-md-3 form-group mb-2">
+                            <div class="col-6 col-md-3 form-group mb-1 px-1">
                                 <label class="small font-weight-bold mb-1" for="filter_date_from">Date From</label>
                                 <input type="date" class="form-control form-control-sm" id="filter_date_from" 
                                        name="date_from" value="{{ $filters['date_from'] ?? '' }}">
                             </div>
 
                             {{-- Date To --}}
-                            <div class="col-sm-6 col-md-3 form-group mb-2">
+                            <div class="col-6 col-md-3 form-group mb-1 px-1">
                                 <label class="small font-weight-bold mb-1" for="filter_date_to">Date To</label>
                                 <input type="date" class="form-control form-control-sm" id="filter_date_to" 
                                        name="date_to" value="{{ $filters['date_to'] ?? '' }}">
                             </div>
 
                             {{-- Amount Min --}}
-                            <div class="col-sm-6 col-md-3 form-group mb-2">
+                            <div class="col-6 col-md-3 form-group mb-1 px-1">
                                 <label class="small font-weight-bold mb-1" for="filter_amount_min">Amount Min</label>
                                 <input type="number" class="form-control form-control-sm" id="filter_amount_min" 
                                        name="amount_min" min="0" step="0.01"
@@ -89,7 +87,7 @@
                             </div>
 
                             {{-- Amount Max --}}
-                            <div class="col-sm-6 col-md-3 form-group mb-2">
+                            <div class="col-6 col-md-3 form-group mb-1 px-1">
                                 <label class="small font-weight-bold mb-1" for="filter_amount_max">Amount Max</label>
                                 <input type="number" class="form-control form-control-sm" id="filter_amount_max" 
                                        name="amount_max" min="0" step="0.01"
@@ -97,7 +95,7 @@
                             </div>
 
                             {{-- Actions --}}
-                            <div class="col-sm-12 col-md-6 form-group mb-2 d-flex align-items-end" style="gap:8px;">
+                            <div class="col-sm-12 col-md-6 form-group my-2 d-flex align-items-end px-1" style="gap:8px;">
                                 <button type="submit" class="btn btn-sm btn-primary">
                                     <i class="fa fa-search"></i> Apply
                                 </button>
@@ -109,7 +107,6 @@
                     </form>
                 </div>
             </div>
-        </div>
         {{-- ===== END FILTER PANEL ===== --}}
 
         <div class="d-flex justify-content-between mb-3">
