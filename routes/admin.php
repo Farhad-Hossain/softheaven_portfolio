@@ -121,4 +121,13 @@ Route::group(['prefix'=>'cashbook', 'as'=>'cashbook.', 'namespace'=>'Admin'], fu
   Route::match(['POST', 'delete'], '/categories/delete/{id}', [CashbookController::class, 'deleteEntryCategory'])
     ->name('categories.delete');
 
+  Route::get('/contacts', [CashbookController::class, 'getContacts'])
+    ->name('contacts');
+  
+  Route::match(['GET', 'POST'], '/contacts/add', [CashbookController::class, 'addContacts'])
+    ->name('contacts.add');
+  
+  Route::match(['GET', 'POST'], '/contacts/edit/{id}', [CashbookController::class, 'editContacts'])
+    ->name('contacts.edit');
+
 });

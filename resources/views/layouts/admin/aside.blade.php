@@ -19,6 +19,7 @@
         <ul class="treeview-menu">
           @include('components.inc.sub_menu', ['route' => route('admin.cashbook.books'), 'label' => 'Cashbooks'])
           @include('components.inc.sub_menu', ['route' => route('admin.cashbook.categories'), 'label' => 'Categories'])
+          @include('components.inc.sub_menu', ['route' => route('admin.cashbook.contacts'), 'label' => 'Contacts'])
         </ul>
       </li>
 

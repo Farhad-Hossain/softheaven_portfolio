@@ -9,6 +9,7 @@ class CashEntry extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
     public function cash_entry_type()
     {
         return $this->belongsTo(CashEntryType::class, 'cash_entry_type_id', 'id');
@@ -27,5 +28,10 @@ class CashEntry extends Model
     public function book()
     {
         return $this->belongsTo(CashBook::class, 'book_id', 'id');
+    }
+
+    public function contact()
+    {
+        return $this->belongsTo(CashContact::class, 'contact_id', 'id');
     }
 }

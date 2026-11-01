@@ -9,6 +9,7 @@ use App\Models\CashEntryType;
 use App\Models\CashBook;
 use App\Models\CashEntry;
 use App\Models\CashPaymentMode;
+use App\Models\CashContact;
 
 class CashbookController extends Controller
 {
@@ -64,10 +65,13 @@ class CashbookController extends Controller
         $total_cash_out = CashEntry::where('book_id', $book_id)->where('cash_entry_type_id', 2)->sum('amount');
         $final_cash = $total_cash_in - $total_cash_out;
 
+        $contacts = CashContact::all();
+
         return view('admin.cashbook.books.view', compact(
             'book',
             'entries',
             'paymentModes',
+            'contacts',
             'categories',
             'entryTypes',
             'total_cash_in',
@@ -110,6 +114,7 @@ class CashbookController extends Controller
         $entry->entry_time = $request->entry_time;
         $entry->contact_person = $request->contact_person;
         $entry->remarks = $request->remarks;
+        $entry->contact_id = $request->contact_id;
         $entry->save();
         session()->flash('success', 'Entry added successfully');
         return redirect()->back();
@@ -117,9 +122,40 @@ class CashbookController extends Controller
 
     public function editEntry(Request $request, $id)
     {
-        $entryTypes = CashEntryType::where('status', 1)->orderBy('id', 'desc')->get();
-        $categories = CashEntryCategory::where('status', 1)->orderBy('id', 'asc')->get();
-        return view('admin.cashbook.edit', compact('id', 'entryTypes', 'categories'));
+        $entry = CashEntry::find($id);
+        if ( $request->method() == 'GET' ) {
+            $view = view('admin.cashbook.books.edit', compact('entry'));
+            if ( $request->ajax() ) {
+                $view = $view->render();
+                return response()->json([
+                    'status' => 'success',
+                    'html_content' => $view,
+                    'title' => 'Edit Entry'
+                ]);
+            }
+            return $view;
+        }
+
+        if ( $request->method() == 'POST' ) {
+            $entry->cash_entry_type_id = $request->cash_entry_type_id;
+            $entry->category_id = $request->category_id;
+            $entry->amount = $request->amount;
+            $entry->payment_mode_id = $request->payment_mode_id;
+            $entry->entry_date = $request->entry_date;
+            $entry->entry_time = $request->entry_time;
+            $entry->remarks = $request->remarks;
+            $entry->contact_id = $request->contact_id;
+            $entry->save();
+            if ( $request->ajax() ) {
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Entry updated successfully',
+                ]);
+            }
+
+            session()->flash('success', 'Entry updated successfully');
+            return redirect()->back();
+        }
     }
 
     public function deleteEntry(Request $request, $id)
@@ -214,4 +250,90 @@ class CashbookController extends Controller
         $category->delete();
         return redirect()->route('admin.cashbook.categories');
     }
+
+    public function getContacts(Request $request)
+    {
+        $contacts = CashContact::all();
+        return view('admin.cashbook.contacts', compact('contacts'));
+    }
+
+    public function addContacts(Request $request)
+    {
+        if ( $request->method() == 'GET' ) {
+            $view = view('admin.cashbook.contacts_add');
+            if ( $request->ajax() ) {
+                $view = $view->render();
+                return response()->json([
+                    'status' => 'success',
+                    'html_content' => $view,
+                    'title' => 'Add Contact'
+                ]);
+            }
+            return $view;
+        }
+
+        $isExists = CashContact::where('name', $request->name)->exists();
+        if ( $isExists ) {
+            session()->flash('error', 'Contact already exists');
+            return redirect()->route('admin.cashbook.contacts');
+        }
+
+        $contact = new CashContact();
+        $contact->name = $request->name;
+        $contact->phone = $request->phone;
+        $contact->address = $request->address;
+        $contact->save();
+
+        if ( $request->method() == 'POST' ) {
+            if ( $request->ajax() ) {
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Contact added successfully',
+                ]);
+            }
+
+            session()->flash('success', 'Contact added successfully');
+            return redirect()->route('admin.cashbook.contacts');
+        }
+    }
+
+    public function editContacts(Request $request, $id)
+    {
+        $contact = CashContact::find($id);
+        if ( $request->method() == 'GET' ) {
+            $view = view('admin.cashbook.contacts_edit', compact('contact'));
+            if ( $request->ajax() ) {
+                $view = $view->render();
+                return response()->json([
+                    'status' => 'success',
+                    'html_content' => $view,
+                    'title' => 'Edit Contact'
+                ]);
+            }
+            return $view;
+        }
+
+        if ( $request->method() == 'POST' ) {
+            $contact = CashContact::where('name', $request->name)->where('id', '=', $id)->first();
+            if (!$contact) {
+                session()->flash('error', 'Contact already exists');
+                return redirect()->route('admin.cashbook.contacts');
+            }
+            $contact->name = $request->name;
+            $contact->phone = $request->phone;
+            $contact->address = $request->address;
+            $contact->status = $request->status;
+            $contact->save();
+            
+            if ( $request->ajax() ) {
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Contact updated successfully',
+                ]);
+            }
+            session()->flash('success', 'Contact updated successfully');
+            return redirect()->route('admin.cashbook.contacts');
+        }
+    }
+    
 }
