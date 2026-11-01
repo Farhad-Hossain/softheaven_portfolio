@@ -8,24 +8,26 @@
     </div>
 
     <div class="card-body">
-        <table class="table table-bordered table-hover" id="cashbook-books-table">
+        <table class="table table-bordered table-hover table-striped table-sm" id="cashbook-books-table">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Name</th>
-                    <th>Actions</th>
+                    <th class="text-end">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($books as $book)
-                <tr>
-                    <td>{{ $book->id }}</td>
-                    <td>
-                        <a href="{{route('admin.cashbook.book.view', ['book_id' => $book->id])}}" class="btn btn-sm btn-link">{{ $book->name }}</a>
+                <tr class="">
+                    <td class="font-weight-bold">
+                        <a href="{{route('admin.cashbook.book.view', ['book_id' => $book->id])}}" class="btn btn-sm btn-link font-weight-bold">{{ $book->name }}</a>
                     </td>
-                    <td>
-                        <a href="{{route('admin.cashbook.books.edit', $book->id)}}" class="btn btn-primary btn-sm">Edit</a>
-                        <a href="{{route('admin.cashbook.books.delete', $book->id)}}" class="btn btn-danger btn-sm btn-delete-cashbook">Delete</a>
+                    <td class="d-flex justify-content-end">
+                        <a href="{{route('admin.cashbook.books.edit', $book->id)}}" class="btn btn-primary btn-sm modal-view" modal-title="Edit Book">
+                            <i class="fa fa-edit"></i>
+                        </a> &nbsp;
+                        <a href="{{route('admin.cashbook.books.delete', $book->id)}}" class="btn btn-danger btn-sm btn-delete-cashbook">
+                            <i class="fa fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
                 @endforeach

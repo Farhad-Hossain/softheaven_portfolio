@@ -3,9 +3,9 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between">
             <h5 class="m-0">Contacts</h5>
-            <button class="btn btn-primary" id="id_add_contact_btn">Add New</button>
+            <button class="btn btn-sm btn-primary" id="id_add_contact_btn"><i class="fa fa-plus"></i> Add</button>
         </div>
     </div>
     <div class="card-body">
@@ -27,7 +27,7 @@
                     <td>{{$contact->address}}</td>
                     <td>
                         <span class="bg-{{$contact->status == 1 ? 'success' : 'danger'}} px-1 rounded text-white font-weight-bold">
-                            {{$contact->status == 1 ? 'Active' : 'Inactive'}}
+                            <i class="fa fa-{{$contact->status == 1 ? 'check' : 'times'}}"></i>
                         </span>
                     </td>
                     <td>
@@ -36,7 +36,8 @@
                                 data-name="{{$contact->name}}" 
                                 data-phone="{{$contact->phone}}" 
                                 data-address="{{$contact->address}}" 
-                                data-status="{{$contact->status}}">Edit
+                                data-status="{{$contact->status}}">
+                            <i class="fa fa-edit"></i>
                         </button>
                     </td>
                 </tr>
@@ -49,9 +50,9 @@
 <div id="id_add_contact_modal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header py-1">
                 <h5 class="modal-title">Add Contact</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -88,9 +89,9 @@
 <div id="id_edit_contact_modal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header py-1">
                 <h5 class="modal-title">Edit Contact</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

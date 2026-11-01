@@ -196,7 +196,7 @@
 <div class="modal fade" id="cashEntryModal" tabindex="-1" role="dialog" aria-labelledby="cashEntryModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header my-0">
+            <div class="modal-header py-1">
                 <h5 class="modal-title my-0" id="cashEntryModalLabel">Cash Entry</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-bs-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
@@ -205,30 +205,30 @@
             <form id="cashEntryForm" method="POST" action="{{ route('admin.cashbook.entries.add') }}">
                 <div class="modal-body">
                     @csrf
-                    
+                    <input type="hidden" id="id_cash_entry_type_id" name="cash_entry_type_id" value="">
+
                     <div class="row">
-                        
-                        <div class="col-sm-6 form-group">
+                        <div class="col-6 form-group">
                             <label for="entry_date">Date <span class="text-danger">*</span></label>
                             <input type="date" class="form-control" id="entry_date" name="entry_date" value="{{ date('Y-m-d') }}" required>
                         </div>
-                        <div class="col-sm-6 form-group">
+                        <div class="col-6 form-group">
                             <label for="entry_time">Time <span class="text-danger">*</span></label>
                             <input type="time" class="form-control" id="entry_time" name="entry_time" value="{{ date('H:i') }}" required>
                         </div>
                     
-                        <div class="col-sm-12 d-none">
+                        <div class="col-12 d-none">
                             <div class="form-group">
                                 <label for="id_cashbook">Cashbook</label>
                                 <input type="text" class="form-control" id="id_cashbook" name="book_id" value="{{ $book->id }}" required>
                             </div>
                         </div>
-                        <div class="col-sm-6 form-group">
+                        <div class="col-6 form-group">
                             <label for="amount">Amount <span class="text-danger">*</span></label>
                             <input type="number" class="form-control" id="amount" min="1" step="0.01" name="amount" required>
                         </div>
                         
-                        <div class="col-sm-6 form-group">
+                        <div class="col-6 form-group">
                             <label for="payment_mode">Payment Mode <span class="text-danger">*</span></label>
                             <select class="form-control" id="payment_mode" name="payment_mode_id" required>
                                 <option value="">---------</option>
@@ -276,7 +276,7 @@
 <div class="modal fade" id="entryEditModal" tabindex="-1" role="dialog" aria-labelledby="entryEditModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header my-0">
+            <div class="modal-header py-0">
                 <h5 class="modal-title my-0" id="entryEditModalLabel">Edit Cash Entry</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-bs-dismiss="modal">
                     <span aria-hidden="true">&times;</span>

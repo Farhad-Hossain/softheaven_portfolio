@@ -11,21 +11,23 @@
         <table class="table table-bordered table-hover" id="cashbook-categories-table">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Name</th>
-                    <th>Actions</th>
+                    <th class="text-end">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($categories as $category)
                 <tr>
-                    <td>{{ $category->id }}</td>
                     <td>
                         {{ $category->name }}
                     </td>
-                    <td>
-                        <a href="{{ route('admin.cashbook.categories.edit', [ 'id' => $category->id]) }}" class="btn btn-primary btn-sm modal-view" modal-title="Edit Category">Edit</a>
-                        <a href="{{ route('admin.cashbook.categories.delete', ['id' => $category->id]) }}" class="btn btn-danger btn-sm btn-delete-category">Delete</a>
+                    <td class="d-flex justify-content-end">
+                        <a href="{{ route('admin.cashbook.categories.edit', [ 'id' => $category->id]) }}" class="btn btn-primary btn-sm modal-view" modal-title="Edit Category">
+                            <i class="fa fa-edit"></i>
+                        </a> &nbsp;
+                        <a href="{{ route('admin.cashbook.categories.delete', ['id' => $category->id]) }}" class="btn btn-danger btn-sm btn-delete-category">
+                            <i class="fa fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
                 @endforeach
@@ -38,9 +40,9 @@
 <div class="modal fade" id="genericModal" tabindex="-1" role="dialog" aria-labelledby="cashEntryModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header py-1">
                 <h5 class="modal-title" id="cashEntryModalLabel">Modal Title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
